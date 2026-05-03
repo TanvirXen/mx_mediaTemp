@@ -279,6 +279,53 @@ function getCalMessageData(data) {
   return data;
 }
 
+function isCalBookingSuccessMessage(data) {
+  if (!data) {
+    return false;
+  }
+
+  var candidates = [];
+
+  if (typeof data === "string") {
+    candidates.push(data);
+  }
+
+  if (typeof data === "object") {
+    candidates.push(
+      data.event,
+      data.type,
+      data.name,
+      data.action
+    );
+
+    if (data.detail && typeof data.detail === "object") {
+      candidates.push(
+        data.detail.event,
+        data.detail.type,
+        data.detail.name,
+        data.detail.action
+      );
+    }
+
+    if (data.payload && typeof data.payload === "object") {
+      candidates.push(
+        data.payload.event,
+        data.payload.type,
+        data.payload.name,
+        data.payload.action
+      );
+    }
+  }
+
+  return candidates.some(function (value) {
+    return typeof value === "string" &&
+      (value === "bookingSuccessful" ||
+        value === "cal.com:booking:success" ||
+        value.indexOf("bookingSuccessful") !== -1 ||
+        value.indexOf("cal.com:booking:success") !== -1);
+  });
+}
+
 window.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll('a[href="#book"]').forEach(function (link) {
     link.addEventListener("click", function () {
@@ -304,11 +351,12 @@ window.addEventListener("message", function (event) {
     return;
   }
 
-  if (
-    data &&
-    (data.event === "bookingSuccessful" ||
-      data.type === "cal.com:booking:success")
-  ) {
+  if (window.__calBookingTracked) {
+    return;
+  }
+
+  if (isCalBookingSuccessMessage(data)) {
+    window.__calBookingTracked = true;
     trackMetaEvent("Lead", {
       content_name: "Discovery Call Booked",
       source: "cal_inline_embed"
