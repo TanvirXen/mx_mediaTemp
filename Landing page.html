@@ -249,6 +249,54 @@ footer{background:var(--dark);color:rgba(255,255,255,.4);padding:56px 6% 64px;te
 }
 </style>
 
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1286984503162211');
+fbq('track', 'PageView');
+
+function trackMetaEvent(eventName, params) {
+  if (typeof window.fbq === "function") {
+    window.fbq("track", eventName, params || {});
+  }
+}
+
+window.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('a[href="#book"]').forEach(function (link) {
+    link.addEventListener("click", function () {
+      trackMetaEvent("Schedule", {
+        content_name: "Book a Call",
+        source: "landing_page_cta"
+      });
+    });
+  });
+});
+
+window.addEventListener("message", function (event) {
+  if (event.data && event.data.event === "bookingSuccessful") {
+    trackMetaEvent("Lead", {
+      content_name: "Discovery Call Booked",
+      source: "cal_inline_embed"
+    });
+    trackMetaEvent("Schedule", {
+      content_name: "Discovery Call Booked",
+      source: "cal_inline_embed"
+    });
+  }
+});
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
 <!-- Cal.com embed script -->
 <script type="text/javascript">
 (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
