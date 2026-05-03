@@ -280,7 +280,11 @@ window.addEventListener("DOMContentLoaded", function () {
 });
 
 window.addEventListener("message", function (event) {
-  if (event.data && event.data.event === "bookingSuccessful") {
+  if (
+    event.data &&
+    (event.data.event === "bookingSuccessful" ||
+      event.data.type === "cal.com:booking:success")
+  ) {
     trackMetaEvent("Lead", {
       content_name: "Discovery Call Booked",
       source: "cal_inline_embed"
@@ -289,6 +293,7 @@ window.addEventListener("message", function (event) {
       content_name: "Discovery Call Booked",
       source: "cal_inline_embed"
     });
+    console.log("Booking tracked!");
   }
 });
 </script>
