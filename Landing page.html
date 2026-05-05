@@ -48,7 +48,7 @@ nav{position:sticky;top:0;z-index:900;background:rgba(239,237,230,.85);backdrop-
 @media(max-width:880px){.nav-links{display:none}}
 
 /* ── SECTIONS ── */
-.sec{padding:100px 6%}
+.sec{padding:64px 6%}
 .sec.tight{padding:100px 6%}
 .sec.dark{background:var(--dark);color:#fff}
 .sec-inner{max-width:1240px;margin:0 auto}
@@ -183,7 +183,7 @@ em.serif{font-family:'Inter',sans-serif;font-style:normal;font-weight:400;letter
 .proof-stat.green .proof-stat-num{color:var(--green)}
 .proof-stat.red .proof-stat-num{color:var(--red);text-decoration:line-through;text-decoration-thickness:4px}
 .proof-stats.three{max-width:880px}
-.proof-video-wrap{margin:20px auto 0;display:flex;justify-content:center}
+.proof-video-wrap{margin:32px auto 0;display:flex;justify-content:center}
 .proof-video{border-radius:16px;overflow:hidden;background:#0F1117;box-shadow:0 18px 48px -16px rgba(15,17,23,.2),0 8px 20px -6px rgba(79,70,229,.08);position:relative;width:100%}
 .proof-video.wide{max-width:480px;aspect-ratio:16/9}
 .proof-video.tall{max-width:220px;aspect-ratio:9/16}
@@ -192,6 +192,28 @@ em.serif{font-family:'Inter',sans-serif;font-style:normal;font-weight:400;letter
 .featured-client .eyebrow{font-size:.9rem;color:var(--mid);font-weight:500;margin-bottom:10px;letter-spacing:-.005em}
 .featured-client h2{margin-bottom:12px}
 .featured-client .lead{margin:0 auto}
+.case-spotlight{background:var(--white);border:1px solid var(--border);border-radius:24px;padding:24px;margin:32px auto 0;max-width:900px;box-shadow:0 24px 60px -20px rgba(15,17,23,.12),0 8px 24px -8px rgba(79,70,229,.08);color:var(--ink);text-align:left}
+.case-spotlight-grid{display:grid;grid-template-columns:220px 1fr;gap:26px;align-items:stretch}
+.case-spotlight-video{aspect-ratio:9/16;border-radius:14px;overflow:hidden;background:#000;position:relative;width:100%}
+.case-spotlight-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.case-spotlight-info{display:flex;flex-direction:column;gap:12px;padding-top:4px}
+.case-spotlight-name{font-size:1.6rem;font-weight:700;color:var(--ink);letter-spacing:-.025em;line-height:1.1}
+.case-spotlight-tag{display:flex;align-items:flex-start;gap:10px;color:var(--ink);font-size:1rem;line-height:1.45;font-weight:500;letter-spacing:-.005em}
+.case-spotlight-tag::before{content:"→";color:var(--a);font-weight:700;flex-shrink:0;font-size:1.05rem;line-height:1.4}
+.case-spotlight-desc{color:var(--mid);font-size:.94rem;line-height:1.6;letter-spacing:-.005em;margin-top:2px}
+.case-spotlight-stats{margin-top:auto;padding-top:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.case-spotlight-stat{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:14px 14px}
+.case-spotlight-stat-label{font-size:.66rem;color:var(--mid);margin-bottom:5px;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+.case-spotlight-stat-num{font-size:1.18rem;font-weight:700;color:var(--ink);letter-spacing:-.02em;display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+.case-spotlight-trend{font-size:.66rem;font-weight:600;color:var(--green);background:var(--green-soft);padding:2px 6px;border-radius:5px;letter-spacing:0;text-transform:none}
+@media(max-width:760px){
+  .case-spotlight{padding:20px;border-radius:20px}
+  .case-spotlight-grid{grid-template-columns:1fr;gap:20px}
+  .case-spotlight-video{max-width:220px;margin:0 auto}
+  .case-spotlight-stats{grid-template-columns:1fr;gap:8px;padding-top:14px}
+  .case-spotlight-name{font-size:1.4rem}
+  .case-spotlight-tag{font-size:.96rem}
+}
 @media(max-width:880px){.testimonial-grid{grid-template-columns:1fr}.testimonial-card{padding:40px 32px}}
 @media(max-width:520px){.testimonial-card{padding:32px 24px;border-radius:22px}.quote-mark{font-size:4rem}}
 
@@ -492,16 +514,6 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
     <h2>Yes. Not because we make things look pretty. Because we build content around <span class="hero-accent">getting you clients.</span></h2>
     <p class="lead" style="margin-top:24px">Real founder, real numbers. We built a content engine on YouTube and Instagram that turned a small, focused audience into a $1M per month inbound machine. No ads. No cold outreach. Just content that converts.</p>
 
-    <div class="proof-stats">
-      <div class="proof-stat purple">
-        <div class="proof-stat-label">Subscribers</div>
-        <div class="proof-stat-num">20K</div>
-      </div>
-      <div class="proof-stat green">
-        <div class="proof-stat-label">Monthly revenue</div>
-        <div class="proof-stat-num">$1.3M</div>
-      </div>
-    </div>
     <div class="proof-video-wrap">
       <div class="proof-video wide">
         <iframe src="https://player.vimeo.com/video/1135499761?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Spencer case study"></iframe>
@@ -510,30 +522,30 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
 
     <a href="#book" class="cta">Book a call <span class="arrow">→</span></a>
 
-    <div class="featured-client">
-      <div class="eyebrow">Featured client · Spencer</div>
-      <h2>From a stalled channel to <em class="purple">$1.3M per month</em> in inbound revenue.</h2>
-      <p class="lead" style="margin-top:20px">We built Spencer's content engine from the ground up. Hooks, scripts, edits, thumbnails, every single video. Now his audience compounds, and inbound clients book themselves on autopilot. No ads. No cold outreach.</p>
-    </div>
-
-    <div class="proof-stats three">
-      <div class="proof-stat red">
-        <div class="proof-stat-label">Before</div>
-        <div class="proof-stat-num">7k</div>
-      </div>
-      <div class="proof-stat green">
-        <div class="proof-stat-label">Today</div>
-        <div class="proof-stat-num">125k+</div>
-      </div>
-      <div class="proof-stat green">
-        <div class="proof-stat-label">Calls/mo</div>
-        <div class="proof-stat-num">200+</div>
-      </div>
-    </div>
-
-    <div class="proof-video-wrap">
-      <div class="proof-video tall">
-        <iframe src="https://player.vimeo.com/video/1135498628?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Spencer testimonial"></iframe>
+    <div class="case-spotlight">
+      <div class="case-spotlight-grid">
+        <div class="case-spotlight-video">
+          <iframe src="https://player.vimeo.com/video/1135498628?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Spencer case study"></iframe>
+        </div>
+        <div class="case-spotlight-info">
+          <div class="case-spotlight-name">Spencer</div>
+          <div class="case-spotlight-tag">Founder building a $1.3M per month inbound engine on YouTube</div>
+          <div class="case-spotlight-desc">We built Spencer's content engine from the ground up. Hooks, scripts, edits, thumbnails, every single video. His audience compounds, and inbound clients book themselves on autopilot. No ads. No cold outreach.</div>
+          <div class="case-spotlight-stats">
+            <div class="case-spotlight-stat">
+              <div class="case-spotlight-stat-label">Subscribers</div>
+              <div class="case-spotlight-stat-num">20K <span class="case-spotlight-trend">+40%</span></div>
+            </div>
+            <div class="case-spotlight-stat">
+              <div class="case-spotlight-stat-label">Monthly revenue</div>
+              <div class="case-spotlight-stat-num">$1.3M</div>
+            </div>
+            <div class="case-spotlight-stat">
+              <div class="case-spotlight-stat-label">Sales calls / month</div>
+              <div class="case-spotlight-stat-num">200+</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
