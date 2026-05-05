@@ -175,6 +175,14 @@ em.serif{font-family:'Inter',sans-serif;font-style:normal;font-weight:400;letter
 .testimonial-cta-block{margin-top:48px;display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;text-align:center}
 .testimonial-cta-block .cta{margin-top:0}
 .testimonial-cta-note{font-family:'Inter',sans-serif;font-style:normal;font-size:1.05rem;color:var(--mid);letter-spacing:-.005em}
+.proof-stats{display:flex;gap:24px;justify-content:center;margin:56px auto 36px;flex-wrap:wrap;max-width:880px}
+.proof-stat{flex:1;min-width:280px;padding:44px 32px;border-radius:24px;text-align:center;background:var(--card)}
+.proof-stat-label{font-size:1.15rem;color:var(--ink);font-weight:500;margin-bottom:18px;letter-spacing:-.01em}
+.proof-stat-num{font-size:clamp(2.8rem,6vw,4.6rem);font-weight:700;letter-spacing:-.05em;line-height:1}
+.proof-stat.red .proof-stat-num{color:var(--red);text-decoration:line-through;text-decoration-thickness:4px}
+.proof-stat.green .proof-stat-num{color:var(--green)}
+.proof-video{margin:8px auto 0;max-width:380px;aspect-ratio:9/16;border-radius:24px;overflow:hidden;background:#0F1117;box-shadow:0 30px 80px -20px rgba(15,17,23,.25),0 12px 32px -10px rgba(79,70,229,.12);position:relative}
+.proof-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 @media(max-width:880px){.testimonial-grid{grid-template-columns:1fr}.testimonial-card{padding:40px 32px}}
 @media(max-width:520px){.testimonial-card{padding:32px 24px;border-radius:22px}.quote-mark{font-size:4rem}}
 
@@ -473,8 +481,22 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
 <section class="sec">
   <div class="sec-inner center">
     <div class="eyebrow"><em>Does this actually work?</em></div>
-    <h2>Yes. Not because we make pretty videos. Because we build content around <em class="purple">growing your audience.</em></h2>
-    <p class="lead" style="margin-top:24px">Founders who post consistently win. Audience grows. Inbound grows. Personal brand becomes the moat. The ones who don't post stay invisible.</p>
+    <h2>Yes. Not because we make things look pretty. Because we build content around <span class="hero-accent">getting you clients.</span></h2>
+    <p class="lead" style="margin-top:24px">Real founder, real numbers. We built a content engine on YouTube and Instagram that turned a small, focused audience into a $1M per month inbound machine. No ads. No cold outreach. Just content that converts.</p>
+
+    <div class="proof-stats">
+      <div class="proof-stat red">
+        <div class="proof-stat-label">Subscribers</div>
+        <div class="proof-stat-num">17K</div>
+      </div>
+      <div class="proof-stat green">
+        <div class="proof-stat-label">Monthly revenue</div>
+        <div class="proof-stat-num">$1M</div>
+      </div>
+    </div>
+    <div class="proof-video">
+      <iframe src="https://player.vimeo.com/video/1135498628?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Client case study"></iframe>
+    </div>
   </div>
 </section>
 
