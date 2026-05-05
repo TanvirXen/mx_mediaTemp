@@ -175,13 +175,14 @@ em.serif{font-family:'Inter',sans-serif;font-style:normal;font-weight:400;letter
 .testimonial-cta-block{margin-top:48px;display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;text-align:center}
 .testimonial-cta-block .cta{margin-top:0}
 .testimonial-cta-note{font-family:'Inter',sans-serif;font-style:normal;font-size:1.05rem;color:var(--mid);letter-spacing:-.005em}
-.proof-stats{display:flex;gap:24px;justify-content:center;margin:56px auto 36px;flex-wrap:wrap;max-width:880px}
-.proof-stat{flex:1;min-width:280px;padding:44px 32px;border-radius:24px;text-align:center;background:var(--card)}
-.proof-stat-label{font-size:1.15rem;color:var(--ink);font-weight:500;margin-bottom:18px;letter-spacing:-.01em}
-.proof-stat-num{font-size:clamp(2.8rem,6vw,4.6rem);font-weight:700;letter-spacing:-.05em;line-height:1}
-.proof-stat.red .proof-stat-num{color:var(--red);text-decoration:line-through;text-decoration-thickness:4px}
+.proof-stats{display:flex;gap:20px;justify-content:center;margin:48px auto 32px;flex-wrap:wrap;max-width:720px}
+.proof-stat{flex:1;min-width:240px;padding:32px 28px;border-radius:20px;text-align:center;background:var(--card)}
+.proof-stat-label{font-size:1.02rem;color:var(--ink);font-weight:500;margin-bottom:14px;letter-spacing:-.01em}
+.proof-stat-num{font-size:clamp(2.2rem,4.5vw,3.4rem);font-weight:700;letter-spacing:-.05em;line-height:1}
+.proof-stat.purple .proof-stat-num{color:var(--a)}
 .proof-stat.green .proof-stat-num{color:var(--green)}
-.proof-video{margin:8px auto 0;max-width:380px;aspect-ratio:9/16;border-radius:24px;overflow:hidden;background:#0F1117;box-shadow:0 30px 80px -20px rgba(15,17,23,.25),0 12px 32px -10px rgba(79,70,229,.12);position:relative}
+.proof-videos{display:flex;gap:20px;justify-content:center;align-items:stretch;margin:8px auto 0;max-width:1040px;flex-wrap:wrap}
+.proof-video{flex:1 1 0;min-width:300px;max-width:500px;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:#0F1117;box-shadow:0 30px 80px -20px rgba(15,17,23,.25),0 12px 32px -10px rgba(79,70,229,.12);position:relative}
 .proof-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 @media(max-width:880px){.testimonial-grid{grid-template-columns:1fr}.testimonial-card{padding:40px 32px}}
 @media(max-width:520px){.testimonial-card{padding:32px 24px;border-radius:22px}.quote-mark{font-size:4rem}}
@@ -414,7 +415,7 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
   <div class="sec-inner center">
     <div class="eyebrow pill"><span class="dot"></span>DFY Content for Founders</div>
     <h1>Build a <span class="hero-accent">high ticket inbound engine</span> on YouTube and Instagram in 30 days, without ads or cold outreach.</h1>
-    <p class="lead">You hit record. We script, edit, design thumbnails, ship. Every video back in 24 hours. A full personal brand engine for founders.</p>
+    <p class="lead">Everything is genuinely done for you. The only thing we ask is that you show up to record, and we'll keep you accountable and guide you through every step.</p>
     <a href="#book" class="cta">
       Book a call <span class="arrow">→</span>
     </a>
@@ -485,17 +486,22 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
     <p class="lead" style="margin-top:24px">Real founder, real numbers. We built a content engine on YouTube and Instagram that turned a small, focused audience into a $1M per month inbound machine. No ads. No cold outreach. Just content that converts.</p>
 
     <div class="proof-stats">
-      <div class="proof-stat red">
+      <div class="proof-stat purple">
         <div class="proof-stat-label">Subscribers</div>
-        <div class="proof-stat-num">17K</div>
+        <div class="proof-stat-num">20K</div>
       </div>
       <div class="proof-stat green">
         <div class="proof-stat-label">Monthly revenue</div>
-        <div class="proof-stat-num">$1M</div>
+        <div class="proof-stat-num">$1.3M</div>
       </div>
     </div>
-    <div class="proof-video">
-      <iframe src="https://player.vimeo.com/video/1135498628?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Client case study"></iframe>
+    <div class="proof-videos">
+      <div class="proof-video">
+        <iframe src="https://player.vimeo.com/video/1135498628?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Client case study 1"></iframe>
+      </div>
+      <div class="proof-video">
+        <iframe src="https://player.vimeo.com/video/1135499761?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Client case study 2"></iframe>
+      </div>
     </div>
   </div>
 </section>
