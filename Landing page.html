@@ -6,7 +6,7 @@
 <title>MZ Media — Content That Builds Your Personal Brand</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -31,7 +31,7 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}
 body{font-family:'Inter','Helvetica Neue',sans-serif;color:var(--ink);background:var(--bg);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
-em{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.005em}
+em{font-family:'Inter',sans-serif;font-style:normal;font-weight:400;letter-spacing:-.005em}
 
 /* ── NAV ── */
 nav{position:sticky;top:0;z-index:900;background:rgba(239,237,230,.85);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid rgba(213,208,195,.6);height:78px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;gap:24px}
@@ -48,7 +48,7 @@ nav{position:sticky;top:0;z-index:900;background:rgba(239,237,230,.85);backdrop-
 @media(max-width:880px){.nav-links{display:none}}
 
 /* ── SECTIONS ── */
-.sec{padding:160px 6%}
+.sec{padding:100px 6%}
 .sec.tight{padding:100px 6%}
 .sec.dark{background:var(--dark);color:#fff}
 .sec-inner{max-width:1240px;margin:0 auto}
@@ -68,63 +68,64 @@ nav{position:sticky;top:0;z-index:900;background:rgba(239,237,230,.85);backdrop-
 .sec-inner.header-center>.testimonial-cta-block{text-align:center}
 
 /* ── TYPOGRAPHY ── */
-.eyebrow{display:inline-block;font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:1.35rem;color:var(--mid);margin-bottom:40px;letter-spacing:-.01em}
+.eyebrow{display:inline-block;font-family:'Inter',sans-serif;font-style:normal;font-size:1.35rem;color:var(--mid);margin-bottom:24px;letter-spacing:-.01em}
 .eyebrow.pill{font-family:'Inter',sans-serif;font-style:normal;background:var(--white);border:1px solid var(--border);padding:10px 22px 10px 16px;border-radius:100px;font-size:.88rem;font-weight:500;color:var(--ink);display:inline-flex;align-items:center;gap:10px}
 .eyebrow.pill .dot{width:9px;height:9px;background:var(--a);border-radius:50%;box-shadow:0 0 0 4px rgba(79,70,229,.15)}
 
 h1,h2{font-family:'Inter',sans-serif;font-weight:700;letter-spacing:-.045em;line-height:.98;color:var(--ink);text-wrap:balance}
-h1{font-size:clamp(2.4rem,5vw,4.6rem)}
-h2{font-size:clamp(2.2rem,5vw,4.4rem);line-height:1.02}
+h1{font-size:clamp(1.7rem,3vw,2.6rem)}
+h2{font-size:clamp(1.5rem,2.5vw,2.2rem);line-height:1.05}
 .sec.dark h1,.sec.dark h2{color:#fff}
 em.purple{color:var(--a)}
 em.green{color:var(--green)}
 em.red{color:var(--red);text-decoration:line-through;text-decoration-thickness:3px}
-em.serif{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.01em;color:var(--ink)}
+em.serif{font-family:'Inter',sans-serif;font-style:normal;font-weight:400;letter-spacing:-.01em;color:var(--ink)}
+.hero h1 .hero-accent{color:var(--a)}
 
-.lead{font-size:clamp(1.05rem,1.4vw,1.25rem);color:var(--mid);line-height:1.6;max-width:680px;text-wrap:pretty;letter-spacing:-.005em}
+.lead{font-size:clamp(.98rem,1.15vw,1.08rem);color:var(--mid);line-height:1.6;max-width:680px;text-wrap:pretty;letter-spacing:-.005em}
 .sec-inner.center .lead{margin-left:auto;margin-right:auto}
 
 /* ── CTA BUTTON ── */
-.cta{display:inline-flex;align-items:center;gap:12px;background:var(--a);color:#fff;font-size:1.08rem;font-weight:600;padding:22px 44px;border-radius:100px;box-shadow:0 12px 36px rgba(79,70,229,.34);transition:transform .2s cubic-bezier(.34,1.56,.64,1),box-shadow .2s,background .15s;margin-top:44px;letter-spacing:-.005em}
+.cta{display:inline-flex;align-items:center;gap:12px;background:var(--a);color:#fff;font-size:1.08rem;font-weight:600;padding:22px 44px;border-radius:100px;box-shadow:0 12px 36px rgba(79,70,229,.34);transition:transform .2s cubic-bezier(.34,1.56,.64,1),box-shadow .2s,background .15s;margin-top:32px;letter-spacing:-.005em}
 .cta:hover{background:var(--ad);transform:translateY(-3px);box-shadow:0 18px 48px rgba(79,70,229,.44)}
 .cta .arrow{transition:transform .25s cubic-bezier(.34,1.56,.64,1);font-size:1.18rem}
 .cta:hover .arrow{transform:translateX(5px)}
 .cta-note{display:block;font-size:.86rem;color:var(--soft);margin-top:18px;letter-spacing:-.005em}
 
 /* ── HERO ── */
-.hero{padding:88px 6% 120px;text-align:center;position:relative;overflow:hidden}
+.hero{padding:56px 6% 80px;text-align:center;position:relative;overflow:hidden}
 .hero::before{content:"";position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:1100px;height:1100px;background:radial-gradient(circle,rgba(79,70,229,.08) 0%,transparent 60%);pointer-events:none;z-index:0}
 .hero>*{position:relative;z-index:1}
-.hero h1{margin-bottom:32px;max-width:1140px;margin-left:auto;margin-right:auto}
-.hero .lead{margin:0 auto;font-size:1.25rem;max-width:660px}
+.hero h1{margin-bottom:20px;max-width:1140px;margin-left:auto;margin-right:auto}
+.hero .lead{margin:0 auto;font-size:1.08rem;max-width:660px}
 .hero-video{margin:72px auto 0;max-width:780px;aspect-ratio:16/9;border-radius:24px;overflow:hidden;background:#0F1117;box-shadow:0 50px 120px -20px rgba(15,17,23,.35),0 24px 60px -12px rgba(79,70,229,.18);position:relative}
 .hero-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .trusted{margin-top:120px;text-align:center}
-.trusted-label{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:1.25rem;color:var(--mid);margin-bottom:40px;letter-spacing:-.01em}
+.trusted-label{font-family:'Inter',sans-serif;font-style:normal;font-size:1.25rem;color:var(--mid);margin-bottom:40px;letter-spacing:-.01em}
 .logos{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px;max-width:920px;margin:0 auto}
 .logo-chip{display:inline-flex;align-items:center;gap:11px;background:var(--white);border:1.5px solid var(--border);border-radius:100px;padding:10px 22px 10px 14px;font-size:.88rem;font-weight:500;color:var(--ink);transition:transform .2s,box-shadow .2s,border-color .2s;letter-spacing:-.005em}
 .logo-chip:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.06);border-color:var(--as)}
 .lc-mono{width:26px;height:26px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:.62rem;font-weight:700;flex-shrink:0;color:#fff;letter-spacing:.02em}
-.logo-chip em{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:.82rem;color:var(--a);font-weight:400;margin-left:2px}
+.logo-chip em{font-family:'Inter',sans-serif;font-style:normal;font-size:.82rem;color:var(--a);font-weight:400;margin-left:2px}
 
 /* ── DARK STATS BAND ── */
-.stats-band{background:var(--dark);color:#fff;padding:140px 6%;position:relative;overflow:hidden}
+.stats-band{background:var(--dark);color:#fff;padding:96px 6%;position:relative;overflow:hidden}
 .stats-band::before{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:1400px;height:600px;background:radial-gradient(ellipse,rgba(79,70,229,.18) 0%,transparent 70%);pointer-events:none}
 .stats-grid{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:80px;align-items:center;position:relative;text-align:center}
 .stat-num{font-family:'Inter',sans-serif;font-weight:600;font-size:clamp(2.2rem,8vw,6.8rem);line-height:.95;letter-spacing:-.05em;color:#fff}
-.stat-label{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:clamp(.85rem,1.6vw,1.4rem);color:rgba(255,255,255,.6);margin-top:14px;letter-spacing:-.01em;line-height:1.3}
+.stat-label{font-family:'Inter',sans-serif;font-style:normal;font-size:clamp(.85rem,1.6vw,1.4rem);color:rgba(255,255,255,.6);margin-top:14px;letter-spacing:-.01em;line-height:1.3}
 .stat-divider{width:10px;height:10px;border-radius:50%;background:rgba(79,70,229,.5);justify-self:center;box-shadow:0 0 0 4px rgba(79,70,229,.18)}
 
 /* ── MARQUEE ── */
 .marquee-wrap{position:relative;margin:0 -6% 96px;padding:0;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%)}
-.marquee-label{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:1.25rem;color:rgba(255,255,255,.55);text-align:center;margin-bottom:36px;letter-spacing:-.01em}
+.marquee-label{font-family:'Inter',sans-serif;font-style:normal;font-size:1.25rem;color:rgba(255,255,255,.55);text-align:center;margin-bottom:36px;letter-spacing:-.01em}
 .marquee{display:flex;width:max-content;animation:marquee-scroll 45s linear infinite;gap:14px}
 .marquee:hover{animation-play-state:paused}
 .marquee-chip{display:inline-flex;align-items:center;gap:11px;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.12);border-radius:100px;padding:12px 24px 12px 14px;font-size:.92rem;font-weight:500;color:#fff;flex-shrink:0;letter-spacing:-.005em;backdrop-filter:blur(10px);transition:background .2s,border-color .2s}
 .marquee-chip:hover{background:rgba(255,255,255,.1);border-color:rgba(79,70,229,.4)}
 .marquee-chip .lc-mono{width:28px;height:28px;border-radius:7px;font-size:.66rem}
 .marquee-chip .chip-avatar{width:30px;height:30px;border-radius:50%;object-fit:cover;flex-shrink:0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1)}
-.marquee-chip em{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:.86rem;color:rgba(199,204,254,.85);font-weight:400;margin-left:2px}
+.marquee-chip em{font-family:'Inter',sans-serif;font-style:normal;font-size:.86rem;color:rgba(199,204,254,.85);font-weight:400;margin-left:2px}
 @keyframes marquee-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 @media(max-width:760px){.marquee-wrap{margin-bottom:64px}.marquee{animation-duration:35s}}
 @media(prefers-reduced-motion:reduce){.marquee{animation:none}}
@@ -149,7 +150,7 @@ em.serif{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-wei
 .roman-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:80px}
 .roman-card{background:var(--card);border-radius:28px;padding:52px 44px;display:flex;flex-direction:column;height:100%;position:relative;transition:transform .3s,background .2s}
 .roman-card:hover{transform:translateY(-6px);background:var(--white)}
-.roman-num{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:7rem;line-height:.85;letter-spacing:-.04em;color:var(--ink);margin-bottom:48px}
+.roman-num{font-family:'Inter',sans-serif;font-style:normal;font-size:7rem;line-height:.85;letter-spacing:-.04em;color:var(--ink);margin-bottom:48px}
 .roman-title{font-size:1.7rem;font-weight:700;color:var(--ink);margin-bottom:18px;letter-spacing:-.03em;line-height:1.1}
 .roman-desc{font-size:1rem;color:var(--mid);line-height:1.65;margin-bottom:36px;flex:1;letter-spacing:-.005em}
 .roman-tag{display:inline-flex;align-items:center;gap:10px;font-size:.86rem;font-weight:500;color:var(--green);align-self:flex-start;border-top:1px solid var(--border);padding-top:22px;width:100%;letter-spacing:-.005em}
@@ -161,19 +162,19 @@ em.serif{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-wei
 @media(max-width:1080px){.testimonial-grid{grid-template-columns:repeat(2,1fr)}}
 .testimonial-card{background:var(--card);border-radius:28px;padding:48px 44px;display:flex;flex-direction:column;height:100%;transition:transform .25s,background .2s}
 .testimonial-card:hover{transform:translateY(-4px);background:var(--white)}
-.quote-mark{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:5.5rem;line-height:.5;color:var(--a);opacity:.22;margin-bottom:18px;letter-spacing:-.04em}
+.quote-mark{font-family:'Inter',sans-serif;font-style:normal;font-size:5.5rem;line-height:.5;color:var(--a);opacity:.22;margin-bottom:18px;letter-spacing:-.04em}
 .quote-text{font-family:'Inter',sans-serif;font-size:clamp(1.08rem,1.45vw,1.32rem);font-weight:600;line-height:1.4;color:var(--ink);margin-bottom:28px;letter-spacing:-.02em;text-wrap:pretty;min-height:9.5rem}
-.quote-text em{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;color:var(--a);letter-spacing:-.005em}
+.quote-text em{font-family:'Inter',sans-serif;font-style:normal;font-weight:400;color:var(--a);letter-spacing:-.005em}
 .testimonial-screenshot{margin-bottom:28px;border-radius:14px;overflow:hidden;box-shadow:0 18px 44px -12px rgba(15,17,23,.22),0 6px 18px rgba(15,17,23,.06);border:1px solid rgba(15,17,23,.06);background:#1A1B22;height:260px;display:flex;align-items:center;justify-content:center}
 .testimonial-screenshot img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block}
 .quote-attribution{display:flex;align-items:center;gap:14px;padding-top:24px;border-top:1px solid var(--border);margin-top:auto}
 .quote-avatar{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.95rem;flex-shrink:0;letter-spacing:-.02em;object-fit:cover}
 .quote-author{font-size:1rem;font-weight:600;color:var(--ink);letter-spacing:-.01em;line-height:1.3}
-.quote-role{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:.9rem;color:var(--mid);letter-spacing:-.005em;margin-top:2px;white-space:nowrap}
+.quote-role{font-family:'Inter',sans-serif;font-style:normal;font-size:.9rem;color:var(--mid);letter-spacing:-.005em;margin-top:2px;white-space:nowrap}
 .quote-role .badge{display:inline-flex;align-items:center;gap:5px;background:var(--af);border:1px solid var(--as);border-radius:100px;padding:2px 8px;font-family:'Inter',sans-serif;font-style:normal;font-size:.62rem;font-weight:600;color:var(--a);margin-left:6px;letter-spacing:.005em;vertical-align:middle;white-space:nowrap}
 .testimonial-cta-block{margin-top:48px;display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;text-align:center}
 .testimonial-cta-block .cta{margin-top:0}
-.testimonial-cta-note{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:1.05rem;color:var(--mid);letter-spacing:-.005em}
+.testimonial-cta-note{font-family:'Inter',sans-serif;font-style:normal;font-size:1.05rem;color:var(--mid);letter-spacing:-.005em}
 @media(max-width:880px){.testimonial-grid{grid-template-columns:1fr}.testimonial-card{padding:40px 32px}}
 @media(max-width:520px){.testimonial-card{padding:32px 24px;border-radius:22px}.quote-mark{font-size:4rem}}
 
@@ -404,8 +405,8 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
 <section class="hero">
   <div class="sec-inner center">
     <div class="eyebrow pill"><span class="dot"></span>DFY Content for Founders</div>
-    <h1>Build a personal brand on YouTube, Instagram, and TikTok in <em class="purple">30 minutes a week</em>. <em>We handle everything else.</em></h1>
-    <p class="lead">You hit record. We script, edit, design thumbnails, and ship. A full personal brand engine for founders, with a 24 hour turnaround on every single video.</p>
+    <h1>Build a personal brand on YouTube, Instagram, and TikTok in <span class="hero-accent">30 minutes a week</span>. We handle everything else.</h1>
+    <p class="lead">You hit record. We script, edit, design thumbnails, ship. Every video back in 24 hours. A full personal brand engine for founders.</p>
     <a href="#book" class="cta">
       Book a call <span class="arrow">→</span>
     </a>
@@ -472,8 +473,8 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
 <section class="sec">
   <div class="sec-inner center">
     <div class="eyebrow"><em>Does this actually work?</em></div>
-    <h2>Yes. Not because we make videos that <em>look pretty.</em> Because we build content around <em class="purple">growing your audience.</em></h2>
-    <p class="lead" style="margin-top:36px">Founders who post consistently build trust at scale. Their audience grows. Their inbound grows. Their personal brand becomes the moat. The ones who don't, stay invisible. We make sure you stay in the first group.</p>
+    <h2>Yes. Not because we make pretty videos. Because we build content around <em class="purple">growing your audience.</em></h2>
+    <p class="lead" style="margin-top:24px">Founders who post consistently win. Audience grows. Inbound grows. Personal brand becomes the moat. The ones who don't post stay invisible.</p>
   </div>
 </section>
 
@@ -482,7 +483,7 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
   <div class="sec-inner header-center">
     <div class="eyebrow"><em>How it works</em></div>
     <h2>From discovery call to first video posted, in <em class="purple">under a week.</em></h2>
-    <p class="lead" style="margin-top:32px">No agency back and forth. No missed deadlines. You record, we run <em class="serif">the rest of the pipeline.</em></p>
+    <p class="lead" style="margin-top:20px">No agency back and forth. No missed deadlines. You record. We run the rest of the pipeline.</p>
 
     <div class="steps-grid">
       <div class="step-card">
@@ -491,7 +492,7 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         </div>
         <div class="step-title">Discovery call</div>
-        <div class="step-desc">We jump on a call to understand your brand, your audience, and the kind of content that will move the needle for you.</div>
+        <div class="step-desc">30 minute call. Your brand, your audience, what moves the needle.</div>
       </div>
       <div class="step-card">
         <div class="step-num">02</div>
@@ -534,13 +535,13 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
   <div class="sec-inner header-center">
     <div class="eyebrow"><em>What you get</em></div>
     <h2>We run the entire content engine <em class="purple">for you.</em></h2>
-    <p class="lead" style="margin-top:32px">No blank pages. No editor chasing. <em class="serif">No missed deadlines.</em></p>
+    <p class="lead" style="margin-top:20px">No blank pages. No editor chasing. No missed deadlines.</p>
 
     <div class="roman-grid">
       <div class="roman-card">
         <div class="roman-num"><em>01.</em></div>
         <div class="roman-title">No blank pages</div>
-        <div class="roman-desc">You never sit there wondering what to talk about. We send you the topic, the hook, and the full script. You show up and read.</div>
+        <div class="roman-desc">Never wonder what to record. We send the topic, the hook, the full script. You show up and read.</div>
         <div class="roman-tag"><span class="dot"></span>Full scripts, every video</div>
       </div>
       <div class="roman-card">
@@ -620,7 +621,7 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
   <div class="sec-inner header-center">
     <div class="eyebrow"><em>Our work</em></div>
     <h2>Real videos, for real founders. <em class="purple">This is what we ship.</em></h2>
-    <p class="lead" style="margin-top:32px">Vertical, retention edited, ready to post. Built to land in <em class="serif">your audience's feed</em> every week.</p>
+    <p class="lead" style="margin-top:20px">Vertical, retention edited, ready to post. Built to land in your audience's feed every week.</p>
 
     <div class="work-grid">
       <div class="work-card">
@@ -662,7 +663,7 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
   <div class="sec-inner header-center">
     <div class="eyebrow"><em>Why us, not them</em></div>
     <h2>Most agencies give you a freelancer, slow turnaround, and a <em class="red">US sized invoice.</em></h2>
-    <p class="lead" style="margin-top:32px">Here is <em class="serif">the honest comparison.</em></p>
+    <p class="lead" style="margin-top:20px">Here is the honest comparison.</p>
 
     <div class="compare-grid">
       <div class="compare-col">
