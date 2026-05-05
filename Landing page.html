@@ -181,9 +181,17 @@ em.serif{font-family:'Inter',sans-serif;font-style:normal;font-weight:400;letter
 .proof-stat-num{font-size:clamp(2.2rem,4.5vw,3.4rem);font-weight:700;letter-spacing:-.05em;line-height:1}
 .proof-stat.purple .proof-stat-num{color:var(--a)}
 .proof-stat.green .proof-stat-num{color:var(--green)}
-.proof-videos{display:flex;gap:20px;justify-content:center;align-items:stretch;margin:8px auto 0;max-width:1040px;flex-wrap:wrap}
-.proof-video{flex:1 1 0;min-width:300px;max-width:500px;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:#0F1117;box-shadow:0 30px 80px -20px rgba(15,17,23,.25),0 12px 32px -10px rgba(79,70,229,.12);position:relative}
+.proof-video-wrap{margin:32px auto 0;display:flex;justify-content:center}
+.proof-video{border-radius:20px;overflow:hidden;background:#0F1117;box-shadow:0 30px 80px -20px rgba(15,17,23,.25),0 12px 32px -10px rgba(79,70,229,.12);position:relative;width:100%}
+.proof-video.wide{max-width:760px;aspect-ratio:16/9}
+.proof-video.tall{max-width:340px;aspect-ratio:9/16}
 .proof-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.proof-video::before{content:"";position:absolute;top:14px;left:14px;width:8px;height:8px;border-radius:50%;background:var(--a);z-index:2;box-shadow:0 0 0 4px rgba(79,70,229,.18)}
+.proof-video::after{content:"Case study";position:absolute;top:8px;left:32px;z-index:2;color:#fff;background:rgba(15,17,23,.7);padding:5px 12px 5px 6px;border-radius:100px;font-size:.72rem;font-weight:600;letter-spacing:.02em;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.featured-client{margin:80px auto 0;text-align:center;max-width:760px}
+.featured-client .eyebrow{font-size:1rem;color:var(--mid);font-weight:500;margin-bottom:18px;letter-spacing:-.005em}
+.featured-client h2{margin-bottom:20px}
+.featured-client .lead{margin:0 auto}
 @media(max-width:880px){.testimonial-grid{grid-template-columns:1fr}.testimonial-card{padding:40px 32px}}
 @media(max-width:520px){.testimonial-card{padding:32px 24px;border-radius:22px}.quote-mark{font-size:4rem}}
 
@@ -401,7 +409,6 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
   <a href="#top" class="brand" aria-label="MZ Media"><img src="MZ%20new%20logo.png" alt="MZ Media"/></a>
   <div class="nav-links">
     <a href="#how">How it works</a>
-    <a href="#work">Our Work</a>
     <a href="#why">Why Us</a>
     <a href="#faq">FAQ</a>
   </div>
@@ -495,12 +502,21 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
         <div class="proof-stat-num">$1.3M</div>
       </div>
     </div>
-    <div class="proof-videos">
-      <div class="proof-video">
-        <iframe src="https://player.vimeo.com/video/1135498628?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Client case study 1"></iframe>
+    <div class="proof-video-wrap">
+      <div class="proof-video wide">
+        <iframe src="https://player.vimeo.com/video/1135499761?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Spencer case study"></iframe>
       </div>
-      <div class="proof-video">
-        <iframe src="https://player.vimeo.com/video/1135499761?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Client case study 2"></iframe>
+    </div>
+
+    <div class="featured-client">
+      <div class="eyebrow">Featured client · Spencer</div>
+      <h2>From a stalled channel to <em class="purple">$1.3M per month</em> in inbound revenue.</h2>
+      <p class="lead" style="margin-top:20px">We built Spencer's content engine from the ground up. Hooks, scripts, edits, thumbnails, every single video. Now his audience compounds, and inbound clients book themselves on autopilot. No ads. No cold outreach.</p>
+    </div>
+
+    <div class="proof-video-wrap">
+      <div class="proof-video tall">
+        <iframe src="https://player.vimeo.com/video/1135498628?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Spencer testimonial"></iframe>
       </div>
     </div>
   </div>
@@ -640,48 +656,6 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
         Book a call <span class="arrow">→</span>
       </a>
       <span class="testimonial-cta-note">Same team, same standard, for your channel.</span>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════ PORTFOLIO ══════════════════ -->
-<section id="work" class="sec" style="background:var(--white)">
-  <div class="sec-inner header-center">
-    <div class="eyebrow"><em>Our work</em></div>
-    <h2>Real videos, for real founders. <em class="purple">This is what we ship.</em></h2>
-    <p class="lead" style="margin-top:20px">Vertical, retention edited, ready to post. Built to land in your audience's feed every week.</p>
-
-    <div class="work-grid">
-      <div class="work-card">
-        <div class="work-badge">Founder content</div>
-        <div class="vimeo-wrap">
-          <iframe src="https://player.vimeo.com/video/1174346007?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Client Work #1"></iframe>
-        </div>
-        <div class="work-meta">
-          <span class="work-tag">Hook driven</span>
-          <span class="work-tag">Reels ready</span>
-        </div>
-      </div>
-      <div class="work-card">
-        <div class="work-badge">Talking head</div>
-        <div class="vimeo-wrap">
-          <iframe src="https://player.vimeo.com/video/1165297036?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Client Work #2"></iframe>
-        </div>
-        <div class="work-meta">
-          <span class="work-tag">Founder voice</span>
-          <span class="work-tag">Story led</span>
-        </div>
-      </div>
-      <div class="work-card">
-        <div class="work-badge">Personal brand</div>
-        <div class="vimeo-wrap">
-          <iframe src="https://player.vimeo.com/video/1165224682?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Gary Vee breakdown"></iframe>
-        </div>
-        <div class="work-meta">
-          <span class="work-tag">Audience growth</span>
-          <span class="work-tag">Authority play</span>
-        </div>
-      </div>
     </div>
   </div>
 </section>
