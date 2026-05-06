@@ -169,33 +169,32 @@ em.serif{font-family:'Inter',sans-serif;font-style:normal;font-weight:400;letter
 .clients-band-header .eyebrow{color:rgba(255,255,255,.5);margin-bottom:14px}
 .clients-band-header h2{color:#fff}
 .clients-band-header h2 em.purple{color:var(--a)}
-.featured-clients{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:760px;margin:0 auto 48px;padding:0 6%}
-.featured-client{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:14px 18px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:transform .25s,background .25s,border-color .25s}
+.featured-clients{display:grid;grid-template-columns:repeat(2,1fr);grid-auto-rows:1fr;gap:14px;max-width:760px;margin:0 auto 48px;padding:0 6%}
+.featured-client{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:14px 18px;width:100%;height:84px;box-sizing:border-box;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:transform .25s,background .25s,border-color .25s}
 .featured-client:hover{transform:translateY(-2px);background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14)}
 .featured-client-photo{width:52px;height:52px;border-radius:50%;background-size:cover;background-position:center;background-color:#1a1d2e;flex-shrink:0;border:1px solid rgba(255,255,255,.1)}
-.featured-client-info{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1}
+.featured-client-info{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-width:0;flex:1;text-align:left}
 .featured-client-name{font-size:1.08rem;font-weight:700;color:#fff;display:flex;align-items:center;gap:6px;letter-spacing:-.02em;line-height:1.1}
 .featured-client.verified .featured-client-name::after{content:"";display:inline-flex;flex-shrink:0;width:16px;height:16px;border-radius:50%;background:var(--a) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") center/9px no-repeat;box-shadow:0 0 0 2px rgba(79,70,229,.2)}
-.featured-client-meta{font-size:.85rem;color:rgba(255,255,255,.65);letter-spacing:-.005em;line-height:1.3;margin-top:2px}
+.featured-client-meta{font-size:.85rem;color:rgba(255,255,255,.65);letter-spacing:-.005em;line-height:1.3;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 @media(max-width:760px){.featured-clients{grid-template-columns:1fr;gap:10px;margin-bottom:36px}.featured-client{padding:12px 14px}.featured-client-photo{width:46px;height:46px}.featured-client-name{font-size:1rem}.featured-client-meta{font-size:.78rem}}
 .clients-carousel-wrap{position:relative;overflow:hidden;padding:8px 0 24px;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 95%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 95%,transparent 100%)}
-.clients-carousel{display:flex;gap:20px;width:max-content;animation:clientScroll 55s linear infinite;padding:0 10px}
+.clients-carousel{display:flex;gap:20px;width:max-content;animation:clientScroll 55s linear infinite}
 .clients-carousel:hover{animation-play-state:paused}
 @keyframes clientScroll{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 10px))}}
 @media(prefers-reduced-motion:reduce){.clients-carousel{animation:none}}
-.client-card{flex:0 0 auto;width:320px;height:480px;border-radius:24px;overflow:hidden;position:relative;background-size:cover;background-position:center;background-color:#1a1d2e;display:flex;flex-direction:column;justify-content:flex-end;padding:26px;transition:transform .35s cubic-bezier(.2,.7,.3,1.2),box-shadow .35s;border:1px solid rgba(255,255,255,.08);box-shadow:0 18px 40px -16px rgba(0,0,0,.4)}
-.client-card:hover{transform:translateY(-5px);box-shadow:0 30px 60px -16px rgba(0,0,0,.55)}
-.client-card-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(0,0,0,.55) 65%,rgba(0,0,0,.92) 100%);z-index:1;pointer-events:none}
-.client-card-content{position:relative;z-index:2}
-.client-name{font-size:1.65rem;font-weight:700;letter-spacing:-.025em;margin-bottom:4px;line-height:1.1;color:#fff}
-.client-niche{font-size:.95rem;color:rgba(255,255,255,.72);font-weight:500;letter-spacing:-.005em}
-.client-metrics{position:absolute;top:22px;right:22px;z-index:2;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
-.client-metric{display:inline-flex;align-items:center;padding:6px 12px;background:rgba(255,255,255,.12);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.18);border-radius:100px;color:#fff;font-size:.76rem;font-weight:600;letter-spacing:-.005em;white-space:nowrap;box-shadow:0 4px 12px rgba(0,0,0,.18)}
+.client-card{flex:0 0 auto;width:199px;height:230px;border-radius:16px;overflow:hidden;position:relative;background-size:cover;background-position:center;background-color:#1a1d2e;border:1px solid rgba(255,255,255,.1);box-shadow:0 16px 32px -12px rgba(0,0,0,.5);transition:transform .35s cubic-bezier(.2,.7,.3,1.2),box-shadow .35s}
+.client-card:hover{transform:translateY(-5px);box-shadow:0 24px 48px -16px rgba(0,0,0,.6)}
+.client-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.85) 100%);pointer-events:none;z-index:1}
+.client-card-info{position:absolute;left:0;right:0;bottom:8px;width:184px;height:40px;margin:0 auto;z-index:2;padding:0 6px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.client-name{font-size:.92rem;font-weight:700;letter-spacing:-.015em;line-height:1.1;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.client-icon{width:22px;height:22px;border-radius:50%;background:var(--a);flex-shrink:0;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 2px rgba(79,70,229,.25)}
+.client-icon svg{width:11px;height:11px;color:#fff;stroke-width:3.5}
 @media(max-width:760px){
-  .client-card{width:260px;height:400px;padding:22px;border-radius:20px}
-  .client-name{font-size:1.35rem}
-  .client-niche{font-size:.88rem}
-  .client-metric{font-size:.7rem;padding:5px 10px}
+  .client-card{width:172px;height:200px;border-radius:14px}
+  .client-card-info{width:160px;height:36px;bottom:6px}
+  .client-name{font-size:.85rem}
+  .client-icon{width:20px;height:20px}
   .clients-band{padding:64px 0}
   .clients-band-header{margin-bottom:32px}
 }
@@ -770,14 +769,14 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
       <div class="featured-client-photo" style="background-image:url('Nathan%20Nazareth.jpg')"></div>
       <div class="featured-client-info">
         <div class="featured-client-name">Nathan Nazareth</div>
-        <div class="featured-client-meta">Dropshipping niche · 500K+ subs</div>
+        <div class="featured-client-meta">Dropshipping · 500K+ subs</div>
       </div>
     </div>
     <div class="featured-client">
       <div class="featured-client-photo" style="background-image:url('ClickUp-02%20.png')"></div>
       <div class="featured-client-info">
         <div class="featured-client-name">ClickUp</div>
-        <div class="featured-client-meta">Productivity SaaS · $4B+ valuation</div>
+        <div class="featured-client-meta">Productivity SaaS</div>
       </div>
     </div>
     <div class="featured-client verified">
@@ -792,115 +791,65 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
   <div class="clients-carousel-wrap">
     <div class="clients-carousel">
       <!-- Set 1 -->
-      <div class="client-card" style="background-image:url('ANTHONYSWORLD.jpg')">
-        <div class="client-card-overlay"></div>
-        <div class="client-metrics">
-          <span class="client-metric">5M+ Views</span>
-          <span class="client-metric">100K+ Subs</span>
-        </div>
-        <div class="client-card-content">
-          <div class="client-name">Anthony's World</div>
-          <div class="client-niche">Trading Niche</div>
+      <div class="client-card" style="background-image:url('Bryan%20Emig.jpg')">
+        <div class="client-card-info">
+          <div class="client-name">Bryan Emig</div>
+          <div class="client-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
         </div>
       </div>
-      <div class="client-card" style="background-image:url('Spencer%20Pawliw.jpg')">
-        <div class="client-card-overlay"></div>
-        <div class="client-metrics">
-          <span class="client-metric">1M+ Views</span>
-          <span class="client-metric">7K+ Subs</span>
-        </div>
-        <div class="client-card-content">
-          <div class="client-name">Spencer Pawliw</div>
-          <div class="client-niche">Ecom Niche</div>
+      <div class="client-card" style="background-image:url('Codie%20Sanchez.jpg')">
+        <div class="client-card-info">
+          <div class="client-name">Codie Sanchez</div>
+          <div class="client-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
         </div>
       </div>
       <div class="client-card" style="background-image:url('Nathan%20Nazareth.jpg')">
-        <div class="client-card-overlay"></div>
-        <div class="client-metrics">
-          <span class="client-metric">15M+ Views</span>
-          <span class="client-metric">500K+ Subs</span>
-        </div>
-        <div class="client-card-content">
+        <div class="client-card-info">
           <div class="client-name">Nathan Nazareth</div>
-          <div class="client-niche">Dropshipping Niche</div>
+          <div class="client-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
         </div>
       </div>
-      <div class="client-card" style="background-image:url('Lucy%20Wang.jpg')">
-        <div class="client-card-overlay"></div>
-        <div class="client-metrics">
-          <span class="client-metric">8M+ Views</span>
-          <span class="client-metric">100K+ Subs</span>
-        </div>
-        <div class="client-card-content">
-          <div class="client-name">Lucy Wang</div>
-          <div class="client-niche">AWS Niche</div>
+      <div class="client-card" style="background-image:url('Tai%20Lopez.jpg')">
+        <div class="client-card-info">
+          <div class="client-name">Tai Lopez</div>
+          <div class="client-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
         </div>
       </div>
       <div class="client-card" style="background-image:url('Elise%20Pham.jpg')">
-        <div class="client-card-overlay"></div>
-        <div class="client-metrics">
-          <span class="client-metric">120M+ Views</span>
-          <span class="client-metric">460K+ Subs</span>
-        </div>
-        <div class="client-card-content">
+        <div class="client-card-info">
           <div class="client-name">Elise Pham</div>
-          <div class="client-niche">Academics Niche</div>
+          <div class="client-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
         </div>
       </div>
       <!-- Set 2 (duplicate for seamless loop) -->
-      <div class="client-card" aria-hidden="true" style="background-image:url('ANTHONYSWORLD.jpg')">
-        <div class="client-card-overlay"></div>
-        <div class="client-metrics">
-          <span class="client-metric">5M+ Views</span>
-          <span class="client-metric">100K+ Subs</span>
-        </div>
-        <div class="client-card-content">
-          <div class="client-name">Anthony's World</div>
-          <div class="client-niche">Trading Niche</div>
+      <div class="client-card" aria-hidden="true" style="background-image:url('Bryan%20Emig.jpg')">
+        <div class="client-card-info">
+          <div class="client-name">Bryan Emig</div>
+          <div class="client-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
         </div>
       </div>
-      <div class="client-card" aria-hidden="true" style="background-image:url('Spencer%20Pawliw.jpg')">
-        <div class="client-card-overlay"></div>
-        <div class="client-metrics">
-          <span class="client-metric">1M+ Views</span>
-          <span class="client-metric">7K+ Subs</span>
-        </div>
-        <div class="client-card-content">
-          <div class="client-name">Spencer Pawliw</div>
-          <div class="client-niche">Ecom Niche</div>
+      <div class="client-card" aria-hidden="true" style="background-image:url('Codie%20Sanchez.jpg')">
+        <div class="client-card-info">
+          <div class="client-name">Codie Sanchez</div>
+          <div class="client-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
         </div>
       </div>
       <div class="client-card" aria-hidden="true" style="background-image:url('Nathan%20Nazareth.jpg')">
-        <div class="client-card-overlay"></div>
-        <div class="client-metrics">
-          <span class="client-metric">15M+ Views</span>
-          <span class="client-metric">500K+ Subs</span>
-        </div>
-        <div class="client-card-content">
+        <div class="client-card-info">
           <div class="client-name">Nathan Nazareth</div>
-          <div class="client-niche">Dropshipping Niche</div>
+          <div class="client-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
         </div>
       </div>
-      <div class="client-card" aria-hidden="true" style="background-image:url('Lucy%20Wang.jpg')">
-        <div class="client-card-overlay"></div>
-        <div class="client-metrics">
-          <span class="client-metric">8M+ Views</span>
-          <span class="client-metric">100K+ Subs</span>
-        </div>
-        <div class="client-card-content">
-          <div class="client-name">Lucy Wang</div>
-          <div class="client-niche">AWS Niche</div>
+      <div class="client-card" aria-hidden="true" style="background-image:url('Tai%20Lopez.jpg')">
+        <div class="client-card-info">
+          <div class="client-name">Tai Lopez</div>
+          <div class="client-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
         </div>
       </div>
       <div class="client-card" aria-hidden="true" style="background-image:url('Elise%20Pham.jpg')">
-        <div class="client-card-overlay"></div>
-        <div class="client-metrics">
-          <span class="client-metric">120M+ Views</span>
-          <span class="client-metric">460K+ Subs</span>
-        </div>
-        <div class="client-card-content">
+        <div class="client-card-info">
           <div class="client-name">Elise Pham</div>
-          <div class="client-niche">Academics Niche</div>
+          <div class="client-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
         </div>
       </div>
     </div>
