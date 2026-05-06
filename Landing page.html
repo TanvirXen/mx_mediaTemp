@@ -193,7 +193,11 @@ em.serif{font-family:'Inter',sans-serif;font-style:normal;font-weight:400;letter
 .featured-client .eyebrow{font-size:.9rem;color:var(--mid);font-weight:500;margin-bottom:10px;letter-spacing:-.005em}
 .featured-client h2{margin-bottom:12px}
 .featured-client .lead{margin:0 auto}
-.case-intro{margin:56px auto 0;text-align:center;max-width:860px;padding:0 6%}
+.case-connector{margin:48px auto 0;display:flex;align-items:center;justify-content:center;gap:22px;max-width:680px;padding:0 6%}
+.case-connector::before,.case-connector::after{content:"";flex:1;height:2px;background:linear-gradient(90deg,transparent 0%,rgba(79,70,229,.35) 50%,rgba(79,70,229,.35) 100%);border-radius:2px}
+.case-connector::after{background:linear-gradient(90deg,rgba(79,70,229,.35) 0%,rgba(79,70,229,.35) 50%,transparent 100%)}
+.case-connector span{font-size:.95rem;font-weight:700;color:var(--ink);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+.case-intro{margin:24px auto 0;text-align:center;max-width:860px;padding:0 6%}
 .case-intro-eyebrow{font-size:.95rem;color:var(--mid);font-weight:500;margin-bottom:14px;letter-spacing:-.005em}
 .case-intro-title{font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;color:var(--ink);letter-spacing:-.04em;line-height:1.08;margin:0}
 .case-intro-title .purple{color:var(--a)}
@@ -553,8 +557,11 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
 
     <a href="#book" class="cta">Book a call <span class="arrow">→</span></a>
 
+    <div class="case-connector" aria-hidden="true">
+      <span>Hear from Spencer</span>
+    </div>
+
     <div class="case-intro">
-      <div class="case-intro-eyebrow">Featured client · Spencer</div>
       <h3 class="case-intro-title">From zero inbound to <span class="purple">$1.3M/month</span> in just months.</h3>
     </div>
 
