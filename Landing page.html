@@ -142,7 +142,7 @@ em.serif{font-family:'Inter',sans-serif;font-style:normal;font-weight:400;letter
 .step-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--a) 0%,#7C3AED 100%);transform:scaleX(0);transform-origin:left center;transition:transform .35s cubic-bezier(.2,.7,.3,1.2)}
 .step-card:hover{transform:translateY(-5px);border-color:rgba(79,70,229,.25);box-shadow:0 20px 40px -16px rgba(79,70,229,.2),0 4px 12px -4px rgba(15,17,23,.06)}
 .step-card:hover::before{transform:scaleX(1)}
-.step-num{display:inline-flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.14em;color:var(--a);background:rgba(79,70,229,.08);padding:5px 10px;border-radius:6px;border:1px solid rgba(79,70,229,.18);width:auto;height:auto;margin-bottom:22px;align-self:flex-start}
+.step-num{position:absolute;top:22px;right:22px;width:36px;height:36px;border-radius:50%;background:var(--bg);color:var(--ink);display:inline-flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.01em;margin:0;padding:0;border:1px solid rgba(15,17,23,.1);z-index:2}
 .step-icon{width:44px;height:44px;border-radius:12px;background:var(--a);display:flex;align-items:center;justify-content:center;margin-bottom:20px;box-shadow:0 10px 22px -4px rgba(79,70,229,.42),0 3px 8px -2px rgba(79,70,229,.25),inset 0 1px 0 rgba(255,255,255,.22);transition:transform .3s,box-shadow .3s}
 .step-card:hover .step-icon{transform:scale(1.06) translateY(-1px);box-shadow:0 14px 28px -4px rgba(79,70,229,.5),0 5px 12px -2px rgba(79,70,229,.32),inset 0 1px 0 rgba(255,255,255,.28)}
 .step-icon svg{width:21px;height:21px;color:#fff}
