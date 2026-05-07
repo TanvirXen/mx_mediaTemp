@@ -77,7 +77,7 @@ h1,h2{font-family:'Inter',sans-serif;font-weight:700;letter-spacing:-.045em;line
 h1{font-size:clamp(1.7rem,3vw,2.6rem)}
 h2{font-size:clamp(1.5rem,2.5vw,2.2rem);line-height:1.05}
 .sec.dark h1,.sec.dark h2{color:#fff}
-em.purple{color:var(--a)}
+em.purple{color:var(--a);font-style:normal;font-weight:800}
 em.green{color:var(--green)}
 em.red{color:var(--red);text-decoration:line-through;text-decoration-thickness:3px}
 em.serif{font-family:'Inter',sans-serif;font-style:normal;font-weight:400;letter-spacing:-.01em;color:var(--ink)}
@@ -187,15 +187,16 @@ em.serif{font-family:'Inter',sans-serif;font-style:normal;font-weight:400;letter
 .client-card{flex:0 0 auto;width:199px;height:230px;box-sizing:border-box;border-radius:16px;overflow:hidden;position:relative;background-size:cover;background-position:center;background-color:#1a1d2e;background-clip:padding-box;border:1px solid rgba(255,255,255,.08);box-shadow:0 16px 32px -12px rgba(0,0,0,.5);transition:transform .35s cubic-bezier(.2,.7,.3,1.2),box-shadow .35s;transform:translateZ(0);isolation:isolate}
 .client-card:hover{transform:translateY(-5px);box-shadow:0 24px 48px -16px rgba(0,0,0,.6)}
 .client-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.85) 100%);pointer-events:none;z-index:1}
-.client-card-info{position:absolute;left:0;right:0;bottom:8px;width:184px;height:40px;margin:0 auto;z-index:2;padding:0 6px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.client-card-info{position:absolute;left:0;right:0;bottom:8px;width:184px;height:40px;margin:0 auto;z-index:2;padding:0 6px;display:flex;align-items:center;justify-content:flex-start;gap:6px}
 .client-name{font-size:.92rem;font-weight:700;letter-spacing:-.015em;line-height:1.1;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
-.client-icon{width:22px;height:22px;border-radius:50%;background:var(--a);flex-shrink:0;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 2px rgba(79,70,229,.25)}
-.client-icon svg{width:11px;height:11px;color:#fff;stroke-width:3.5}
+.client-icon{width:16px;height:16px;border-radius:50%;background:var(--a);flex-shrink:0;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 1.5px rgba(79,70,229,.25)}
+.client-icon svg{width:8px;height:8px;color:#fff;stroke-width:3.5}
 @media(max-width:760px){
   .client-card{width:172px;height:200px;border-radius:14px}
   .client-card-info{width:160px;height:36px;bottom:6px}
   .client-name{font-size:.85rem}
-  .client-icon{width:20px;height:20px}
+  .client-icon{width:14px;height:14px}
+  .client-icon svg{width:7px;height:7px}
   .clients-band{padding:64px 0}
   .clients-band-header{margin-bottom:32px}
 }
@@ -620,6 +621,10 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
     <div class="eyebrow"><em>Does this actually work?</em></div>
     <h2 class="proof-h2">Yes. Not because we make things look pretty. Because we build content around <span class="hero-accent">getting you clients.</span></h2>
 
+    <div class="case-connector" aria-hidden="true">
+      <span>Hear from Spencer</span>
+    </div>
+
     <div class="case-spotlight">
       <div class="case-spotlight-grid">
         <div class="case-spotlight-video">
@@ -635,10 +640,6 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
     </div>
 
     <a href="#book" class="cta">Book a call <span class="arrow">→</span></a>
-
-    <div class="case-connector" aria-hidden="true">
-      <span>Hear from Spencer</span>
-    </div>
 
     <div class="case-intro">
       <h3 class="case-intro-title">From zero inbound to <span class="purple">$1.3M/month</span> in just months.</h3>
@@ -784,7 +785,7 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
         <div class="featured-client-meta"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg><span>588K subscribers</span></div>
       </div>
     </div>
-    <div class="featured-client">
+    <div class="featured-client verified">
       <div class="featured-client-photo" style="background-image:url('ClickUp-02%20.png')"></div>
       <div class="featured-client-info">
         <div class="featured-client-name">ClickUp</div>
@@ -838,7 +839,7 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
 <section id="why" class="sec">
   <div class="sec-inner header-center">
     <div class="eyebrow"><em>Why us, not them</em></div>
-    <h2>Most agencies make content. We make content that <em class="red">books high-ticket calls.</em></h2>
+    <h2>Most agencies make content. We make content that <em class="purple">books high-ticket calls.</em></h2>
     <p class="lead" style="margin-top:20px">The difference shows up in your audience, not your invoice.</p>
 
     <div class="compare-grid">
