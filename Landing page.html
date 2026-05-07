@@ -129,7 +129,7 @@ em.serif{font-family:'Inter',sans-serif;font-style:normal;font-weight:400;letter
 .marquee-chip .lc-mono{width:28px;height:28px;border-radius:7px;font-size:.66rem}
 .marquee-chip .chip-avatar{width:30px;height:30px;border-radius:50%;object-fit:cover;flex-shrink:0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1)}
 .marquee-chip em{font-family:'Inter',sans-serif;font-style:normal;font-size:.86rem;color:rgba(199,204,254,.85);font-weight:400;margin-left:2px}
-@keyframes marquee-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes marquee-scroll{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(calc(-50% - 7px),0,0)}}
 @media(max-width:760px){.marquee-wrap{margin-bottom:64px}.marquee{animation-duration:35s}}
 @media(prefers-reduced-motion:reduce){.marquee{animation:none}}
 
@@ -570,29 +570,33 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
     <div class="marquee-label">Trusted by founders &amp; brands building personal brands at</div>
     <div class="marquee" role="list">
       <!-- Set 1 -->
-      <div class="marquee-chip" role="listitem"><img class="chip-avatar" src="ClickUp-02%20.png" alt="">ClickUp</div>
-      <div class="marquee-chip" role="listitem"><img class="chip-avatar" src="AI%20Dropshipping%20Builder(Nathan%20Nazareth)%20.jpg" alt="">AI Dropshipping Builder</div>
-      <div class="marquee-chip" role="listitem"><img class="chip-avatar" src="ai-advertiser%20(brezscales)%20.png" alt="">AI Advertiser</div>
-      <div class="marquee-chip" role="listitem"><img class="chip-avatar" src="Bernd%20Skorupinski-Online%20Trading%20Campus.jpg" alt="">Online Trading Campus</div>
-      <div class="marquee-chip" role="listitem"><img class="chip-avatar" src="Bethroars.jpg" alt="">Beth Roars</div>
-      <div class="marquee-chip" role="listitem"><img class="chip-avatar" src="CODIE%20SANCHEZ%20.jpg" alt="">Codie Sanchez</div>
-      <div class="marquee-chip" role="listitem"><img class="chip-avatar" src="Easyamedia(Spencer%20Pawliw).jpg" alt="">Easyamedia</div>
-      <div class="marquee-chip" role="listitem"><img class="chip-avatar" src="ICON%20(Samuel%20Onuha)%20.jpg" alt="">ICON</div>
-      <div class="marquee-chip" role="listitem"><img class="chip-avatar" src="learntocut%20(Alexi%20Michael).jpg" alt="">Learntocut</div>
-      <div class="marquee-chip" role="listitem"><img class="chip-avatar" src="scotthofitness.png" alt="">Scott Ho Fitness</div>
-      <div class="marquee-chip" role="listitem"><img class="chip-avatar" src="ultimateivyleagueguide(Elise%20Pham).jpg" alt="">Ultimate Ivy League Guide</div>
+      <div class="marquee-chip" role="listitem"><img class="chip-avatar" src="Codie%20Sanchez.jpg" alt="">Codie Sanchez</div>
+      <div class="marquee-chip" role="listitem"><img class="chip-avatar" src="Nathan%20Nazareth.jpg" alt="">Nathan Nazareth</div>
+      <div class="marquee-chip" role="listitem"><img class="chip-avatar" src="Tai%20Lopez.jpg" alt="">Tai Lopez</div>
+      <div class="marquee-chip" role="listitem"><img class="chip-avatar" src="Elise%20Pham.jpg" alt="">Elise Pham</div>
+      <div class="marquee-chip" role="listitem"><img class="chip-avatar" src="Brez%20Scales.jpg" alt="">Brez Scales</div>
+      <div class="marquee-chip" role="listitem"><img class="chip-avatar" src="Samuel%20Onuha.jpg" alt="">Samuel Onuha</div>
+      <div class="marquee-chip" role="listitem"><img class="chip-avatar" src="Beth%20Roars.jpg" alt="">Beth Roars</div>
+      <div class="marquee-chip" role="listitem"><img class="chip-avatar" src="Lucy%20Wang.jpg" alt="">Lucy Wang</div>
+      <div class="marquee-chip" role="listitem"><img class="chip-avatar" src="Spencer%20Pawliw.jpg" alt="">Spencer Pawliw</div>
+      <div class="marquee-chip" role="listitem"><img class="chip-avatar" src="alexi%20michael.webp" alt="">Alexi Michael</div>
+      <div class="marquee-chip" role="listitem"><img class="chip-avatar" src="Scott%20Hoho.jpg" alt="">Scott Hoho</div>
+      <div class="marquee-chip" role="listitem"><img class="chip-avatar" src="bernd%20skorupinski.jpg" alt="">Bernd Skorupinski</div>
+      <div class="marquee-chip" role="listitem"><img class="chip-avatar" src="Zeb%20Evans.jpg" alt="">Zeb Evans</div>
       <!-- Set 2 (duplicate for seamless loop) -->
-      <div class="marquee-chip" aria-hidden="true"><img class="chip-avatar" src="ClickUp-02%20.png" alt="">ClickUp</div>
-      <div class="marquee-chip" aria-hidden="true"><img class="chip-avatar" src="AI%20Dropshipping%20Builder(Nathan%20Nazareth)%20.jpg" alt="">AI Dropshipping Builder</div>
-      <div class="marquee-chip" aria-hidden="true"><img class="chip-avatar" src="ai-advertiser%20(brezscales)%20.png" alt="">AI Advertiser</div>
-      <div class="marquee-chip" aria-hidden="true"><img class="chip-avatar" src="Bernd%20Skorupinski-Online%20Trading%20Campus.jpg" alt="">Online Trading Campus</div>
-      <div class="marquee-chip" aria-hidden="true"><img class="chip-avatar" src="Bethroars.jpg" alt="">Beth Roars</div>
-      <div class="marquee-chip" aria-hidden="true"><img class="chip-avatar" src="CODIE%20SANCHEZ%20.jpg" alt="">Codie Sanchez</div>
-      <div class="marquee-chip" aria-hidden="true"><img class="chip-avatar" src="Easyamedia(Spencer%20Pawliw).jpg" alt="">Easyamedia</div>
-      <div class="marquee-chip" aria-hidden="true"><img class="chip-avatar" src="ICON%20(Samuel%20Onuha)%20.jpg" alt="">ICON</div>
-      <div class="marquee-chip" aria-hidden="true"><img class="chip-avatar" src="learntocut%20(Alexi%20Michael).jpg" alt="">Learntocut</div>
-      <div class="marquee-chip" aria-hidden="true"><img class="chip-avatar" src="scotthofitness.png" alt="">Scott Ho Fitness</div>
-      <div class="marquee-chip" aria-hidden="true"><img class="chip-avatar" src="ultimateivyleagueguide(Elise%20Pham).jpg" alt="">Ultimate Ivy League Guide</div>
+      <div class="marquee-chip" aria-hidden="true"><img class="chip-avatar" src="Codie%20Sanchez.jpg" alt="">Codie Sanchez</div>
+      <div class="marquee-chip" aria-hidden="true"><img class="chip-avatar" src="Nathan%20Nazareth.jpg" alt="">Nathan Nazareth</div>
+      <div class="marquee-chip" aria-hidden="true"><img class="chip-avatar" src="Tai%20Lopez.jpg" alt="">Tai Lopez</div>
+      <div class="marquee-chip" aria-hidden="true"><img class="chip-avatar" src="Elise%20Pham.jpg" alt="">Elise Pham</div>
+      <div class="marquee-chip" aria-hidden="true"><img class="chip-avatar" src="Brez%20Scales.jpg" alt="">Brez Scales</div>
+      <div class="marquee-chip" aria-hidden="true"><img class="chip-avatar" src="Samuel%20Onuha.jpg" alt="">Samuel Onuha</div>
+      <div class="marquee-chip" aria-hidden="true"><img class="chip-avatar" src="Beth%20Roars.jpg" alt="">Beth Roars</div>
+      <div class="marquee-chip" aria-hidden="true"><img class="chip-avatar" src="Lucy%20Wang.jpg" alt="">Lucy Wang</div>
+      <div class="marquee-chip" aria-hidden="true"><img class="chip-avatar" src="Spencer%20Pawliw.jpg" alt="">Spencer Pawliw</div>
+      <div class="marquee-chip" aria-hidden="true"><img class="chip-avatar" src="alexi%20michael.webp" alt="">Alexi Michael</div>
+      <div class="marquee-chip" aria-hidden="true"><img class="chip-avatar" src="Scott%20Hoho.jpg" alt="">Scott Hoho</div>
+      <div class="marquee-chip" aria-hidden="true"><img class="chip-avatar" src="bernd%20skorupinski.jpg" alt="">Bernd Skorupinski</div>
+      <div class="marquee-chip" aria-hidden="true"><img class="chip-avatar" src="Zeb%20Evans.jpg" alt="">Zeb Evans</div>
     </div>
   </div>
   <div class="stats-grid">
