@@ -655,51 +655,84 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
         <div class="top-bar"></div>
         <div class="inner">
           <button type="button" class="close-x" id="mz-wa-close-spotlight">×</button>
-          <h2>One quick step</h2>
-          <p class="subhead">So we know what you're working with before the chat starts.</p>
-          <form id="mz-wa-form-spotlight">
-            <label>Full Name</label>
-            <input name="name" placeholder="e.g. John Doe" required />
-            <label>Work Email</label>
-            <input name="email" type="email" placeholder="you@company.com" required />
-            <label>WhatsApp Number</label>
-            <div class="phone-row">
-              <select name="cc">
-                <option value="+44">+44 GB</option>
-                <option value="+1">+1 US</option>
-                <option value="+91">+91 IN</option>
-                <option value="+61">+61 AU</option>
-                <option value="+971">+971 AE</option>
-                <option value="+65">+65 SG</option>
-                <option value="+49">+49 DE</option>
-                <option value="+33">+33 FR</option>
+
+          <!-- STEP 1: Nationality qualifier -->
+          <div id="mz-wa-step1-spotlight">
+            <h2>Quick check first</h2>
+            <p class="subhead">We can only work with founders from certain regions right now.</p>
+            <label>What is your nationality?</label>
+            <select id="mz-wa-nationality-spotlight">
+              <option value="">Select your nationality</option>
+              <option>British</option>
+              <option>American</option>
+              <option>Canadian</option>
+              <option>Australian</option>
+              <option>Indian</option>
+              <option>Emirati</option>
+              <option>Singaporean</option>
+              <option>German</option>
+              <option>French</option>
+              <option>Bangladeshi</option>
+              <option>Other</option>
+            </select>
+            <button type="button" class="continue-btn" id="mz-wa-continue-spotlight" disabled>Continue</button>
+          </div>
+
+          <!-- STEP 2: Main form -->
+          <div id="mz-wa-step2-spotlight" hidden>
+            <h2>One quick step</h2>
+            <p class="subhead">So we know what you're working with before the chat starts.</p>
+            <form id="mz-wa-form-spotlight">
+              <label>Full Name</label>
+              <input name="name" placeholder="e.g. John Doe" required />
+              <label>Work Email</label>
+              <input name="email" type="email" placeholder="you@company.com" required />
+              <label>WhatsApp Number</label>
+              <div class="phone-row">
+                <select name="cc">
+                  <option value="+44">+44 GB</option>
+                  <option value="+1">+1 US</option>
+                  <option value="+91">+91 IN</option>
+                  <option value="+61">+61 AU</option>
+                  <option value="+971">+971 AE</option>
+                  <option value="+65">+65 SG</option>
+                  <option value="+49">+49 DE</option>
+                  <option value="+33">+33 FR</option>
+                </select>
+                <input name="phone" type="tel" placeholder="7700 900000" required />
+              </div>
+              <label>Company Website <span style="color:#94a3b8;font-weight:400;">(optional)</span></label>
+              <input name="website" placeholder="yoursite.com" />
+              <label>When are you looking to start?</label>
+              <select name="timeline" required>
+                <option value="">Select option</option>
+                <option>Immediately</option>
+                <option>Within 1-2 weeks</option>
+                <option>Within 1 month</option>
+                <option>Just exploring</option>
               </select>
-              <input name="phone" type="tel" placeholder="7700 900000" required />
-            </div>
-            <label>Company Website <span style="color:#94a3b8;font-weight:400;">(optional)</span></label>
-            <input name="website" placeholder="yoursite.com" />
-            <label>When are you looking to start?</label>
-            <select name="timeline" required>
-              <option value="">Select option</option>
-              <option>Immediately</option>
-              <option>Within 1-2 weeks</option>
-              <option>Within 1 month</option>
-              <option>Just exploring</option>
-            </select>
-            <label>Current monthly revenue</label>
-            <select name="revenue" required>
-              <option value="">Select range</option>
-              <option>Less than $30k/mo</option>
-              <option>$30k - $50k/mo</option>
-              <option>$50k - $100k/mo</option>
-              <option>$100k - $250k/mo</option>
-              <option>$250k+/mo</option>
-            </select>
-            <button type="submit" class="submit-btn">
-              <svg viewBox="0 0 32 32" width="18" height="18" fill="white"><path d="M16 .5C7.4.5.5 7.4.5 16c0 2.7.7 5.4 2.1 7.7L0 32l8.5-2.5A15.4 15.4 0 0 0 16 31.5c8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5Zm0 28.2c-2.4 0-4.8-.7-6.9-1.9l-.5-.3-5 1.5 1.5-4.9-.3-.5A12.6 12.6 0 1 1 28.6 16c0 7-5.6 12.6-12.6 12.6Zm7.3-9.4c-.4-.2-2.4-1.2-2.7-1.3-.4-.1-.6-.2-.9.2s-1 1.3-1.2 1.5c-.2.2-.4.2-.8.1-2.4-1.2-3.9-2.1-5.5-4.8-.4-.7.4-.7 1.2-2.3.1-.2.1-.4 0-.6 0-.2-.9-2.2-1.3-3-.3-.8-.7-.7-.9-.7h-.8c-.3 0-.7.1-1 .5-.4.4-1.5 1.5-1.5 3.7s1.5 4.3 1.7 4.6c.2.3 3 4.6 7.4 6.4 1 .4 1.9.7 2.5.9.8.2 1.5.2 2.1.1.6-.1 2-.8 2.3-1.6.3-.8.3-1.4.2-1.5-.1-.1-.3-.2-.7-.4Z"/></svg>
-              Continue to WhatsApp
-            </button>
-          </form>
+              <label>Current monthly revenue</label>
+              <select name="revenue" required>
+                <option value="">Select range</option>
+                <option>Less than $30k/mo</option>
+                <option>$30k - $50k/mo</option>
+                <option>$50k - $100k/mo</option>
+                <option>$100k - $250k/mo</option>
+                <option>$250k+/mo</option>
+              </select>
+              <button type="submit" class="submit-btn">
+                <svg viewBox="0 0 32 32" width="18" height="18" fill="white"><path d="M16 .5C7.4.5.5 7.4.5 16c0 2.7.7 5.4 2.1 7.7L0 32l8.5-2.5A15.4 15.4 0 0 0 16 31.5c8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5Zm0 28.2c-2.4 0-4.8-.7-6.9-1.9l-.5-.3-5 1.5 1.5-4.9-.3-.5A12.6 12.6 0 1 1 28.6 16c0 7-5.6 12.6-12.6 12.6Zm7.3-9.4c-.4-.2-2.4-1.2-2.7-1.3-.4-.1-.6-.2-.9.2s-1 1.3-1.2 1.5c-.2.2-.4.2-.8.1-2.4-1.2-3.9-2.1-5.5-4.8-.4-.7.4-.7 1.2-2.3.1-.2.1-.4 0-.6 0-.2-.9-2.2-1.3-3-.3-.8-.7-.7-.9-.7h-.8c-.3 0-.7.1-1 .5-.4.4-1.5 1.5-1.5 3.7s1.5 4.3 1.7 4.6c.2.3 3 4.6 7.4 6.4 1 .4 1.9.7 2.5.9.8.2 1.5.2 2.1.1.6-.1 2-.8 2.3-1.6.3-.8.3-1.4.2-1.5-.1-.1-.3-.2-.7-.4Z"/></svg>
+                Continue to WhatsApp
+              </button>
+            </form>
+          </div>
+
+          <!-- REJECTION screen -->
+          <div id="mz-wa-reject-spotlight" hidden>
+            <h2>Thanks for your interest</h2>
+            <p class="subhead">Unfortunately, we are currently not accepting bookings from your region at this time.</p>
+            <button type="button" class="reject-btn" id="mz-wa-close-reject-spotlight">Close</button>
+          </div>
         </div>
       </div>
     </div>
@@ -718,63 +751,96 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
 
     <div class="cta-row" style="display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:32px">
       <a href="#book" class="cta" style="margin-top:0">Book a call <span class="arrow">→</span></a>
-      <button id="mz-wa-btn-spencer" type="button"
+      <button id="mz-wa-btn-13m" type="button"
         style="display:inline-flex;align-items:center;gap:12px;padding:22px 44px;border:none;border-radius:100px;background:#25D366;color:#fff;font-weight:600;font-family:inherit;font-size:1.08rem;letter-spacing:-.005em;cursor:pointer;box-shadow:0 12px 36px rgba(37,211,102,.34);transition:transform .2s cubic-bezier(.34,1.56,.64,1),box-shadow .2s,background .15s">
         <svg viewBox="0 0 32 32" width="20" height="20" fill="white" aria-hidden="true"><path d="M16 .5C7.4.5.5 7.4.5 16c0 2.7.7 5.4 2.1 7.7L0 32l8.5-2.5A15.4 15.4 0 0 0 16 31.5c8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5Zm0 28.2c-2.4 0-4.8-.7-6.9-1.9l-.5-.3-5 1.5 1.5-4.9-.3-.5A12.6 12.6 0 1 1 28.6 16c0 7-5.6 12.6-12.6 12.6Zm7.3-9.4c-.4-.2-2.4-1.2-2.7-1.3-.4-.1-.6-.2-.9.2s-1 1.3-1.2 1.5c-.2.2-.4.2-.8.1-2.4-1.2-3.9-2.1-5.5-4.8-.4-.7.4-.7 1.2-2.3.1-.2.1-.4 0-.6 0-.2-.9-2.2-1.3-3-.3-.8-.7-.7-.9-.7h-.8c-.3 0-.7.1-1 .5-.4.4-1.5 1.5-1.5 3.7s1.5 4.3 1.7 4.6c.2.3 3 4.6 7.4 6.4 1 .4 1.9.7 2.5.9.8.2 1.5.2 2.1.1.6-.1 2-.8 2.3-1.6.3-.8.3-1.4.2-1.5-.1-.1-.3-.2-.7-.4Z"/></svg>
         Text on WhatsApp
       </button>
     </div>
 
-    <div id="mz-wa-overlay-spencer" class="mz-modal-overlay-1">
-      <div class="mz-modal-card-1">
+    <div id="mz-wa-overlay-13m" class="mz-modal-overlay-2">
+      <div class="mz-modal-card-2">
         <div class="top-bar"></div>
         <div class="inner">
-          <button type="button" class="close-x" id="mz-wa-close-spencer">×</button>
-          <h2>One quick step</h2>
-          <p class="subhead">So we know what you're working with before the chat starts.</p>
-          <form id="mz-wa-form-spencer">
-            <label>Full Name</label>
-            <input name="name" placeholder="e.g. John Doe" required />
-            <label>Work Email</label>
-            <input name="email" type="email" placeholder="you@company.com" required />
-            <label>WhatsApp Number</label>
-            <div class="phone-row">
-              <select name="cc">
-                <option value="+44">+44 GB</option>
-                <option value="+1">+1 US</option>
-                <option value="+91">+91 IN</option>
-                <option value="+61">+61 AU</option>
-                <option value="+971">+971 AE</option>
-                <option value="+65">+65 SG</option>
-                <option value="+49">+49 DE</option>
-                <option value="+33">+33 FR</option>
+          <button type="button" class="close-x" id="mz-wa-close-13m">×</button>
+
+          <!-- STEP 1: Nationality qualifier -->
+          <div id="mz-wa-step1-13m">
+            <h2>Quick check first</h2>
+            <p class="subhead">We can only work with founders from certain regions right now.</p>
+            <label>What is your nationality?</label>
+            <select id="mz-wa-nationality-13m">
+              <option value="">Select your nationality</option>
+              <option>British</option>
+              <option>American</option>
+              <option>Canadian</option>
+              <option>Australian</option>
+              <option>Indian</option>
+              <option>Emirati</option>
+              <option>Singaporean</option>
+              <option>German</option>
+              <option>French</option>
+              <option>Bangladeshi</option>
+              <option>Other</option>
+            </select>
+            <button type="button" class="continue-btn" id="mz-wa-continue-13m" disabled>Continue</button>
+          </div>
+
+          <!-- STEP 2: Main form -->
+          <div id="mz-wa-step2-13m" hidden>
+            <h2>One quick step</h2>
+            <p class="subhead">So we know what you're working with before the chat starts.</p>
+            <form id="mz-wa-form-13m">
+              <label>Full Name</label>
+              <input name="name" placeholder="e.g. John Doe" required />
+              <label>Work Email</label>
+              <input name="email" type="email" placeholder="you@company.com" required />
+              <label>WhatsApp Number</label>
+              <div class="phone-row">
+                <select name="cc">
+                  <option value="+44">+44 GB</option>
+                  <option value="+1">+1 US</option>
+                  <option value="+91">+91 IN</option>
+                  <option value="+61">+61 AU</option>
+                  <option value="+971">+971 AE</option>
+                  <option value="+65">+65 SG</option>
+                  <option value="+49">+49 DE</option>
+                  <option value="+33">+33 FR</option>
+                </select>
+                <input name="phone" type="tel" placeholder="7700 900000" required />
+              </div>
+              <label>Company Website <span style="color:#94a3b8;font-weight:400;">(optional)</span></label>
+              <input name="website" placeholder="yoursite.com" />
+              <label>When are you looking to start?</label>
+              <select name="timeline" required>
+                <option value="">Select option</option>
+                <option>Immediately</option>
+                <option>Within 1-2 weeks</option>
+                <option>Within 1 month</option>
+                <option>Just exploring</option>
               </select>
-              <input name="phone" type="tel" placeholder="7700 900000" required />
-            </div>
-            <label>Company Website <span style="color:#94a3b8;font-weight:400;">(optional)</span></label>
-            <input name="website" placeholder="yoursite.com" />
-            <label>When are you looking to start?</label>
-            <select name="timeline" required>
-              <option value="">Select option</option>
-              <option>Immediately</option>
-              <option>Within 1-2 weeks</option>
-              <option>Within 1 month</option>
-              <option>Just exploring</option>
-            </select>
-            <label>Current monthly revenue</label>
-            <select name="revenue" required>
-              <option value="">Select range</option>
-              <option>Less than $30k/mo</option>
-              <option>$30k - $50k/mo</option>
-              <option>$50k - $100k/mo</option>
-              <option>$100k - $250k/mo</option>
-              <option>$250k+/mo</option>
-            </select>
-            <button type="submit" class="submit-btn">
-              <svg viewBox="0 0 32 32" width="18" height="18" fill="white"><path d="M16 .5C7.4.5.5 7.4.5 16c0 2.7.7 5.4 2.1 7.7L0 32l8.5-2.5A15.4 15.4 0 0 0 16 31.5c8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5Zm0 28.2c-2.4 0-4.8-.7-6.9-1.9l-.5-.3-5 1.5 1.5-4.9-.3-.5A12.6 12.6 0 1 1 28.6 16c0 7-5.6 12.6-12.6 12.6Zm7.3-9.4c-.4-.2-2.4-1.2-2.7-1.3-.4-.1-.6-.2-.9.2s-1 1.3-1.2 1.5c-.2.2-.4.2-.8.1-2.4-1.2-3.9-2.1-5.5-4.8-.4-.7.4-.7 1.2-2.3.1-.2.1-.4 0-.6 0-.2-.9-2.2-1.3-3-.3-.8-.7-.7-.9-.7h-.8c-.3 0-.7.1-1 .5-.4.4-1.5 1.5-1.5 3.7s1.5 4.3 1.7 4.6c.2.3 3 4.6 7.4 6.4 1 .4 1.9.7 2.5.9.8.2 1.5.2 2.1.1.6-.1 2-.8 2.3-1.6.3-.8.3-1.4.2-1.5-.1-.1-.3-.2-.7-.4Z"/></svg>
-              Continue to WhatsApp
-            </button>
-          </form>
+              <label>Current monthly revenue</label>
+              <select name="revenue" required>
+                <option value="">Select range</option>
+                <option>Less than $30k/mo</option>
+                <option>$30k - $50k/mo</option>
+                <option>$50k - $100k/mo</option>
+                <option>$100k - $250k/mo</option>
+                <option>$250k+/mo</option>
+              </select>
+              <button type="submit" class="submit-btn">
+                <svg viewBox="0 0 32 32" width="18" height="18" fill="white"><path d="M16 .5C7.4.5.5 7.4.5 16c0 2.7.7 5.4 2.1 7.7L0 32l8.5-2.5A15.4 15.4 0 0 0 16 31.5c8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5Zm0 28.2c-2.4 0-4.8-.7-6.9-1.9l-.5-.3-5 1.5 1.5-4.9-.3-.5A12.6 12.6 0 1 1 28.6 16c0 7-5.6 12.6-12.6 12.6Zm7.3-9.4c-.4-.2-2.4-1.2-2.7-1.3-.4-.1-.6-.2-.9.2s-1 1.3-1.2 1.5c-.2.2-.4.2-.8.1-2.4-1.2-3.9-2.1-5.5-4.8-.4-.7.4-.7 1.2-2.3.1-.2.1-.4 0-.6 0-.2-.9-2.2-1.3-3-.3-.8-.7-.7-.9-.7h-.8c-.3 0-.7.1-1 .5-.4.4-1.5 1.5-1.5 3.7s1.5 4.3 1.7 4.6c.2.3 3 4.6 7.4 6.4 1 .4 1.9.7 2.5.9.8.2 1.5.2 2.1.1.6-.1 2-.8 2.3-1.6.3-.8.3-1.4.2-1.5-.1-.1-.3-.2-.7-.4Z"/></svg>
+                Continue to WhatsApp
+              </button>
+            </form>
+          </div>
+
+          <!-- REJECTION screen -->
+          <div id="mz-wa-reject-13m" hidden>
+            <h2>Thanks for your interest</h2>
+            <p class="subhead">Unfortunately, we are currently not accepting bookings from your region at this time.</p>
+            <button type="button" class="reject-btn" id="mz-wa-close-reject-13m">Close</button>
+          </div>
         </div>
       </div>
     </div>
@@ -1091,23 +1157,95 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
   .mz-modal-card-1 .phone-row select{max-width:110px;}
   .mz-modal-card-1 .submit-btn{width:100%;margin-top:20px;padding:14px;background:#25D366;color:#fff;border:none;border-radius:12px;font-weight:700;font-size:16px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:10px;}
   .mz-modal-card-1 .submit-btn:hover{background:#1ebd5a;}
-  .mz-modal-card-1 .submit-btn:disabled{opacity:0.6;cursor:wait;}
-  #mz-wa-btn-spencer:hover{background:#1ebd5a;transform:translateY(-3px);box-shadow:0 18px 48px rgba(37,211,102,.44);}
+  .mz-modal-card-1 .submit-btn:disabled{opacity:0.5;cursor:not-allowed;background:#94a3b8;}
+  .mz-modal-card-1 .continue-btn{width:100%;margin-top:20px;padding:14px;background:#5B5BF5;color:#fff;border:none;border-radius:12px;font-weight:700;font-size:16px;cursor:pointer;}
+  .mz-modal-card-1 .continue-btn:hover{background:#4747e0;}
+  .mz-modal-card-1 .continue-btn:disabled{opacity:0.5;cursor:not-allowed;background:#94a3b8;}
+  .mz-modal-card-1 .reject-btn{margin-top:20px;padding:12px 24px;background:#0f172a;color:#fff;border:none;border-radius:10px;font-weight:600;font-size:15px;cursor:pointer;}
+
+  .mz-modal-overlay-2{position:fixed;inset:0;background:rgba(15,23,42,0.6);backdrop-filter:blur(4px);display:none;align-items:flex-start;justify-content:center;padding:24px;z-index:9999;overflow-y:auto;}
+  .mz-modal-overlay-2.open{display:flex;}
+  .mz-modal-card-2{background:#fff;width:100%;max-width:480px;border-radius:20px;box-shadow:0 30px 60px rgba(0,0,0,0.2);overflow:hidden;margin-top:32px;}
+  .mz-modal-card-2 .top-bar{height:6px;background:linear-gradient(90deg,#5B5BF5,#7C3AED);}
+  .mz-modal-card-2 .inner{padding:28px;position:relative;}
+  .mz-modal-card-2 .close-x{position:absolute;top:14px;right:14px;width:36px;height:36px;border:none;background:#f1f5f9;border-radius:50%;cursor:pointer;font-size:18px;color:#475569;}
+  .mz-modal-card-2 h2{font-size:24px;font-weight:800;margin:0 0 6px;color:#0f172a;}
+  .mz-modal-card-2 p.subhead{margin:0 0 18px;color:#64748b;font-size:14px;}
+  .mz-modal-card-2 label{display:block;font-weight:700;font-size:13px;color:#0f172a;margin:14px 0 6px;}
+  .mz-modal-card-2 input,.mz-modal-card-2 select{width:100%;padding:12px 14px;border:1px solid #e2e8f0;background:#f8fafc;border-radius:10px;font-size:15px;font-family:inherit;color:#0f172a;box-sizing:border-box;}
+  .mz-modal-card-2 input:focus,.mz-modal-card-2 select:focus{outline:none;border-color:#5B5BF5;box-shadow:0 0 0 3px rgba(91,91,245,0.2);}
+  .mz-modal-card-2 .phone-row{display:flex;gap:8px;}
+  .mz-modal-card-2 .phone-row select{max-width:110px;}
+  .mz-modal-card-2 .submit-btn{width:100%;margin-top:20px;padding:14px;background:#25D366;color:#fff;border:none;border-radius:12px;font-weight:700;font-size:16px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:10px;}
+  .mz-modal-card-2 .submit-btn:hover{background:#1ebd5a;}
+  .mz-modal-card-2 .submit-btn:disabled{opacity:0.5;cursor:not-allowed;background:#94a3b8;}
+  .mz-modal-card-2 .continue-btn{width:100%;margin-top:20px;padding:14px;background:#5B5BF5;color:#fff;border:none;border-radius:12px;font-weight:700;font-size:16px;cursor:pointer;}
+  .mz-modal-card-2 .continue-btn:hover{background:#4747e0;}
+  .mz-modal-card-2 .continue-btn:disabled{opacity:0.5;cursor:not-allowed;background:#94a3b8;}
+  .mz-modal-card-2 .reject-btn{margin-top:20px;padding:12px 24px;background:#0f172a;color:#fff;border:none;border-radius:10px;font-weight:600;font-size:15px;cursor:pointer;}
+
+  #mz-wa-btn-13m:hover{background:#1ebd5a;transform:translateY(-3px);box-shadow:0 18px 48px rgba(37,211,102,.44);}
 </style>
 <script>
 (function(){
   const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyfakix9cNSNuMLBhnKCJ4HvCovILQ0MQLm-fmCxrgYmEPLO4Q4u8EF-rP1OPdiaMLjbA/exec";
   const WA_NUMBER = "447479373304";
-  const SOURCE = "Spencer CTA";
+  const SOURCE = "$1.3M CTA";
+  const BLOCKED_NATIONALITIES = ["Bangladeshi"];
 
-  const btn = document.getElementById('mz-wa-btn-spencer');
-  const overlay = document.getElementById('mz-wa-overlay-spencer');
-  const closeX = document.getElementById('mz-wa-close-spencer');
-  const form = document.getElementById('mz-wa-form-spencer');
+  const btn         = document.getElementById('mz-wa-btn-13m');
+  const overlay     = document.getElementById('mz-wa-overlay-13m');
+  const closeX      = document.getElementById('mz-wa-close-13m');
+  const step1       = document.getElementById('mz-wa-step1-13m');
+  const step2       = document.getElementById('mz-wa-step2-13m');
+  const rejectView  = document.getElementById('mz-wa-reject-13m');
+  const closeReject = document.getElementById('mz-wa-close-reject-13m');
+  const nationality = document.getElementById('mz-wa-nationality-13m');
+  const continueBtn = document.getElementById('mz-wa-continue-13m');
+  const form        = document.getElementById('mz-wa-form-13m');
 
-  btn.addEventListener('click', () => overlay.classList.add('open'));
-  closeX.addEventListener('click', () => overlay.classList.remove('open'));
-  overlay.addEventListener('click', e => { if (e.target === overlay) overlay.classList.remove('open'); });
+  let userNationality = '';
+
+  function showStep1()  { step1.hidden = false; step2.hidden = true;  rejectView.hidden = true; }
+  function showStep2()  { step1.hidden = true;  step2.hidden = false; rejectView.hidden = true; }
+  function showReject() { step1.hidden = true;  step2.hidden = true;  rejectView.hidden = false; }
+
+  function openModal()  {
+    userNationality = '';
+    nationality.value = '';
+    continueBtn.disabled = true;
+    showStep1();
+    overlay.classList.add('open');
+  }
+  function closeModal() { overlay.classList.remove('open'); }
+
+  btn.addEventListener('click', openModal);
+  closeX.addEventListener('click', closeModal);
+  closeReject.addEventListener('click', closeModal);
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+
+  nationality.addEventListener('change', () => {
+    continueBtn.disabled = !nationality.value;
+  });
+
+  continueBtn.addEventListener('click', async () => {
+    userNationality = nationality.value;
+    if (BLOCKED_NATIONALITIES.includes(userNationality)) {
+      try {
+        await fetch(APPS_SCRIPT_URL, {
+          method: 'POST',
+          body: JSON.stringify({
+            nationality: userNationality,
+            source: `${SOURCE} (BD blocked)`,
+            submittedAt: new Date().toISOString()
+          })
+        });
+      } catch (err) { console.error('Sheet save failed', err); }
+      showReject();
+      return;
+    }
+    showStep2();
+  });
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -1127,6 +1265,7 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
       website: String(fd.get('website') || '').trim(),
       startDate: fd.get('timeline'),
       revenue: fd.get('revenue'),
+      nationality: userNationality,
       source: SOURCE,
       submittedAt: new Date().toISOString()
     };
@@ -1135,7 +1274,7 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
     catch (err) { console.error('Sheet save failed', err); }
 
     const msg = encodeURIComponent(
-      `Hey Neel - I just submitted my details after watching Spencer's case study on your site. I'm ${payload.name}${payload.website ? ' from ' + payload.website : ''}. Open to a quick chat about MZ Media for my business.`
+      `Hey Neel - I just submitted my details after watching the $1.3M/month case study. I'm ${payload.name}${payload.website ? ' from ' + payload.website : ''}. Curious if MZ could do similar for my business.`
     );
     window.location.href = `https://wa.me/${WA_NUMBER}?text=${msg}`;
   });
@@ -1151,15 +1290,61 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
   const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyfakix9cNSNuMLBhnKCJ4HvCovILQ0MQLm-fmCxrgYmEPLO4Q4u8EF-rP1OPdiaMLjbA/exec";
   const WA_NUMBER = "447479373304";
   const SOURCE = "Spencer Spotlight CTA";
+  const BLOCKED_NATIONALITIES = ["Bangladeshi"]; // add more here to block other nationalities
 
-  const btn = document.getElementById('mz-wa-btn-spotlight');
-  const overlay = document.getElementById('mz-wa-overlay-spotlight');
-  const closeX = document.getElementById('mz-wa-close-spotlight');
-  const form = document.getElementById('mz-wa-form-spotlight');
+  const btn         = document.getElementById('mz-wa-btn-spotlight');
+  const overlay     = document.getElementById('mz-wa-overlay-spotlight');
+  const closeX      = document.getElementById('mz-wa-close-spotlight');
+  const step1       = document.getElementById('mz-wa-step1-spotlight');
+  const step2       = document.getElementById('mz-wa-step2-spotlight');
+  const rejectView  = document.getElementById('mz-wa-reject-spotlight');
+  const closeReject = document.getElementById('mz-wa-close-reject-spotlight');
+  const nationality = document.getElementById('mz-wa-nationality-spotlight');
+  const continueBtn = document.getElementById('mz-wa-continue-spotlight');
+  const form        = document.getElementById('mz-wa-form-spotlight');
 
-  btn.addEventListener('click', () => overlay.classList.add('open'));
-  closeX.addEventListener('click', () => overlay.classList.remove('open'));
-  overlay.addEventListener('click', e => { if (e.target === overlay) overlay.classList.remove('open'); });
+  let userNationality = '';
+
+  function showStep1()  { step1.hidden = false; step2.hidden = true;  rejectView.hidden = true; }
+  function showStep2()  { step1.hidden = true;  step2.hidden = false; rejectView.hidden = true; }
+  function showReject() { step1.hidden = true;  step2.hidden = true;  rejectView.hidden = false; }
+
+  function openModal()  {
+    userNationality = '';
+    nationality.value = '';
+    continueBtn.disabled = true;
+    showStep1();
+    overlay.classList.add('open');
+  }
+  function closeModal() { overlay.classList.remove('open'); }
+
+  btn.addEventListener('click', openModal);
+  closeX.addEventListener('click', closeModal);
+  closeReject.addEventListener('click', closeModal);
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+
+  nationality.addEventListener('change', () => {
+    continueBtn.disabled = !nationality.value;
+  });
+
+  continueBtn.addEventListener('click', async () => {
+    userNationality = nationality.value;
+    if (BLOCKED_NATIONALITIES.includes(userNationality)) {
+      try {
+        await fetch(APPS_SCRIPT_URL, {
+          method: 'POST',
+          body: JSON.stringify({
+            nationality: userNationality,
+            source: `${SOURCE} (BD blocked)`,
+            submittedAt: new Date().toISOString()
+          })
+        });
+      } catch (err) { console.error('Sheet save failed', err); }
+      showReject();
+      return;
+    }
+    showStep2();
+  });
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -1179,6 +1364,7 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
       website: String(fd.get('website') || '').trim(),
       startDate: fd.get('timeline'),
       revenue: fd.get('revenue'),
+      nationality: userNationality,
       source: SOURCE,
       submittedAt: new Date().toISOString()
     };
