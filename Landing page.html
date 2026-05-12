@@ -641,7 +641,68 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
       </div>
     </div>
 
-    <a href="#book" class="cta">Book a call <span class="arrow">→</span></a>
+    <div class="cta-row" style="display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:32px">
+      <a href="#book" class="cta" style="margin-top:0">Book a call <span class="arrow">→</span></a>
+      <button id="mz-wa-btn-spotlight" type="button"
+        style="display:inline-flex;align-items:center;gap:12px;padding:22px 44px;border:none;border-radius:100px;background:#25D366;color:#fff;font-weight:600;font-family:inherit;font-size:1.08rem;letter-spacing:-.005em;cursor:pointer;box-shadow:0 12px 36px rgba(37,211,102,.34);transition:transform .2s cubic-bezier(.34,1.56,.64,1),box-shadow .2s,background .15s">
+        <svg viewBox="0 0 32 32" width="20" height="20" fill="white" aria-hidden="true"><path d="M16 .5C7.4.5.5 7.4.5 16c0 2.7.7 5.4 2.1 7.7L0 32l8.5-2.5A15.4 15.4 0 0 0 16 31.5c8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5Zm0 28.2c-2.4 0-4.8-.7-6.9-1.9l-.5-.3-5 1.5 1.5-4.9-.3-.5A12.6 12.6 0 1 1 28.6 16c0 7-5.6 12.6-12.6 12.6Zm7.3-9.4c-.4-.2-2.4-1.2-2.7-1.3-.4-.1-.6-.2-.9.2s-1 1.3-1.2 1.5c-.2.2-.4.2-.8.1-2.4-1.2-3.9-2.1-5.5-4.8-.4-.7.4-.7 1.2-2.3.1-.2.1-.4 0-.6 0-.2-.9-2.2-1.3-3-.3-.8-.7-.7-.9-.7h-.8c-.3 0-.7.1-1 .5-.4.4-1.5 1.5-1.5 3.7s1.5 4.3 1.7 4.6c.2.3 3 4.6 7.4 6.4 1 .4 1.9.7 2.5.9.8.2 1.5.2 2.1.1.6-.1 2-.8 2.3-1.6.3-.8.3-1.4.2-1.5-.1-.1-.3-.2-.7-.4Z"/></svg>
+        Text on WhatsApp
+      </button>
+    </div>
+
+    <div id="mz-wa-overlay-spotlight" class="mz-modal-overlay-1">
+      <div class="mz-modal-card-1">
+        <div class="top-bar"></div>
+        <div class="inner">
+          <button type="button" class="close-x" id="mz-wa-close-spotlight">×</button>
+          <h2>One quick step</h2>
+          <p class="subhead">So we know what you're working with before the chat starts.</p>
+          <form id="mz-wa-form-spotlight">
+            <label>Full Name</label>
+            <input name="name" placeholder="e.g. John Doe" required />
+            <label>Work Email</label>
+            <input name="email" type="email" placeholder="you@company.com" required />
+            <label>WhatsApp Number</label>
+            <div class="phone-row">
+              <select name="cc">
+                <option value="+44">+44 GB</option>
+                <option value="+1">+1 US</option>
+                <option value="+91">+91 IN</option>
+                <option value="+61">+61 AU</option>
+                <option value="+971">+971 AE</option>
+                <option value="+65">+65 SG</option>
+                <option value="+49">+49 DE</option>
+                <option value="+33">+33 FR</option>
+              </select>
+              <input name="phone" type="tel" placeholder="7700 900000" required />
+            </div>
+            <label>Company Website <span style="color:#94a3b8;font-weight:400;">(optional)</span></label>
+            <input name="website" placeholder="yoursite.com" />
+            <label>When are you looking to start?</label>
+            <select name="timeline" required>
+              <option value="">Select option</option>
+              <option>Immediately</option>
+              <option>Within 1-2 weeks</option>
+              <option>Within 1 month</option>
+              <option>Just exploring</option>
+            </select>
+            <label>Current monthly revenue</label>
+            <select name="revenue" required>
+              <option value="">Select range</option>
+              <option>Less than $30k/mo</option>
+              <option>$30k - $50k/mo</option>
+              <option>$50k - $100k/mo</option>
+              <option>$100k - $250k/mo</option>
+              <option>$250k+/mo</option>
+            </select>
+            <button type="submit" class="submit-btn">
+              <svg viewBox="0 0 32 32" width="18" height="18" fill="white"><path d="M16 .5C7.4.5.5 7.4.5 16c0 2.7.7 5.4 2.1 7.7L0 32l8.5-2.5A15.4 15.4 0 0 0 16 31.5c8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5Zm0 28.2c-2.4 0-4.8-.7-6.9-1.9l-.5-.3-5 1.5 1.5-4.9-.3-.5A12.6 12.6 0 1 1 28.6 16c0 7-5.6 12.6-12.6 12.6Zm7.3-9.4c-.4-.2-2.4-1.2-2.7-1.3-.4-.1-.6-.2-.9.2s-1 1.3-1.2 1.5c-.2.2-.4.2-.8.1-2.4-1.2-3.9-2.1-5.5-4.8-.4-.7.4-.7 1.2-2.3.1-.2.1-.4 0-.6 0-.2-.9-2.2-1.3-3-.3-.8-.7-.7-.9-.7h-.8c-.3 0-.7.1-1 .5-.4.4-1.5 1.5-1.5 3.7s1.5 4.3 1.7 4.6c.2.3 3 4.6 7.4 6.4 1 .4 1.9.7 2.5.9.8.2 1.5.2 2.1.1.6-.1 2-.8 2.3-1.6.3-.8.3-1.4.2-1.5-.1-.1-.3-.2-.7-.4Z"/></svg>
+              Continue to WhatsApp
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
 
     <div class="case-intro">
       <h3 class="case-intro-title">From zero inbound to <span class="purple">$1.3M/month</span> in just months.</h3>
@@ -1075,6 +1136,58 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
 
     const msg = encodeURIComponent(
       `Hey Neel - I just submitted my details after watching Spencer's case study on your site. I'm ${payload.name}${payload.website ? ' from ' + payload.website : ''}. Open to a quick chat about MZ Media for my business.`
+    );
+    window.location.href = `https://wa.me/${WA_NUMBER}?text=${msg}`;
+  });
+})();
+</script>
+
+<!-- ══════════════════ WHATSAPP MODAL (Spencer Spotlight CTA) ══════════════════ -->
+<style>
+  #mz-wa-btn-spotlight:hover{background:#1ebd5a;transform:translateY(-3px);box-shadow:0 18px 48px rgba(37,211,102,.44);}
+</style>
+<script>
+(function(){
+  const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyfakix9cNSNuMLBhnKCJ4HvCovILQ0MQLm-fmCxrgYmEPLO4Q4u8EF-rP1OPdiaMLjbA/exec";
+  const WA_NUMBER = "447479373304";
+  const SOURCE = "Spencer Spotlight CTA";
+
+  const btn = document.getElementById('mz-wa-btn-spotlight');
+  const overlay = document.getElementById('mz-wa-overlay-spotlight');
+  const closeX = document.getElementById('mz-wa-close-spotlight');
+  const form = document.getElementById('mz-wa-form-spotlight');
+
+  btn.addEventListener('click', () => overlay.classList.add('open'));
+  closeX.addEventListener('click', () => overlay.classList.remove('open'));
+  overlay.addEventListener('click', e => { if (e.target === overlay) overlay.classList.remove('open'); });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const submitBtn = form.querySelector('.submit-btn');
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = 'Submitting…';
+
+    const fd = new FormData(form);
+    const cc = fd.get('cc');
+    const phone = String(fd.get('phone')).trim();
+    const payload = {
+      name: String(fd.get('name')).trim(),
+      email: String(fd.get('email')).trim(),
+      whatsapp: `'${cc} ${phone}`,
+      countryCode: cc,
+      phone: phone,
+      website: String(fd.get('website') || '').trim(),
+      startDate: fd.get('timeline'),
+      revenue: fd.get('revenue'),
+      source: SOURCE,
+      submittedAt: new Date().toISOString()
+    };
+
+    try { await fetch(APPS_SCRIPT_URL, { method: 'POST', body: JSON.stringify(payload) }); }
+    catch (err) { console.error('Sheet save failed', err); }
+
+    const msg = encodeURIComponent(
+      `Hey Neel - I just submitted my details after hearing Spencer's story on your site. I'm ${payload.name}${payload.website ? ' from ' + payload.website : ''}. Open to a quick chat about MZ Media for my business.`
     );
     window.location.href = `https://wa.me/${WA_NUMBER}?text=${msg}`;
   });
