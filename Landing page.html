@@ -362,6 +362,10 @@ em.serif{font-family:'Inter',sans-serif;font-style:normal;font-weight:400;letter
 .cal-embed iframe{border-radius:20px;background:transparent !important;width:100% !important;min-height:760px !important}
 @media(max-width:760px){.cal-embed{min-height:560px;margin:18px auto 6px;border:0;background:transparent;border-radius:12px}.cal-embed iframe{min-height:560px !important;border-radius:12px}#book.sec.tight{padding:44px 4%}#book .final-cta{padding:32px 16px;border-radius:20px}#book .final-cta h2{font-size:1.45rem;margin-bottom:12px}#book .final-cta .lead{font-size:.95rem;margin:0 auto}#book .cta-note{font-size:.8rem}}
 @media(max-width:480px){.cal-embed{min-height:520px;margin:14px auto 4px}.cal-embed iframe{min-height:520px !important}#book.sec.tight{padding:36px 3%}#book .final-cta{padding:26px 12px;border-radius:18px}#book .final-cta h2{font-size:1.25rem;margin-bottom:10px}#book .final-cta .lead{font-size:.88rem}}
+.youform-embed{width:100%;max-width:900px;margin:0 auto;padding:1.5px;background:linear-gradient(160deg,rgba(79,70,229,.9),rgba(79,70,229,.25) 45%,rgba(255,255,255,.08));border-radius:16px;box-shadow:0 24px 70px -28px rgba(79,70,229,.55),0 0 0 1px rgba(15,17,23,.04)}
+.youform-embed iframe{display:block;width:100%;height:clamp(620px,82vh,820px);border:none;border-radius:14px}
+@media(max-width:760px){.youform-embed{margin:18px auto 6px}.youform-embed iframe{height:clamp(560px,80vh,720px)}}
+@media(max-width:480px){.youform-embed iframe{height:clamp(520px,85vh,660px)}}
 
 /* ── FOOTER ── */
 footer{background:var(--dark);color:rgba(255,255,255,.4);padding:56px 6% 64px;text-align:center;font-size:.86rem;letter-spacing:-.005em}
@@ -1069,16 +1073,16 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
   <div class="final-cta">
     <div class="eyebrow"><em style="color:rgba(255,255,255,.6)">Ready to start?</em></div>
     <h2>Let's turn your content into a <em class="purple">personal brand engine.</em></h2>
-    <p class="lead">Pick a time that works for you. We'll show you exactly how the system works for your audience.</p>
-    <div class="cal-embed">
+ 
+    <div class="youform-embed">
       <iframe
-        src="https://cal.com/forms/5c143f2c-61d4-4284-b651-d0e387b76d75"
+        src="https://app.youform.com/forms/cn2nlxtj"
+        width="100%"
         title="Book a discovery call"
-        loading="lazy"
-        referrerpolicy="strict-origin-when-cross-origin"
-      ></iframe>
+        frameborder="0">
+      </iframe>
     </div>
-    <span class="cta-note">No commitment · 30 min discovery call · UK registered company</span>
+ 
   </div>
 </section>
 
