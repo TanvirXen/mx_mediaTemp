@@ -1166,8 +1166,8 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
             <div class="cost-control-label">What your time is worth</div>
             <div class="cost-control-val" id="cost-rate-val">$300<span>/hr</span></div>
           </div>
-          <input type="range" class="cost-range" id="cost-rate" min="100" max="1000" step="25" value="300">
-          <div class="cost-range-scale"><span>$100</span><span>$1,000</span></div>
+          <input type="range" class="cost-range" id="cost-rate" min="150" max="1000" step="25" value="300">
+          <div class="cost-range-scale"><span>$150</span><span>$1,000</span></div>
         </div>
 
         <div class="cost-controls-note">
@@ -1200,13 +1200,13 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
             <div class="cost-line-amt" id="cost-amt-mgr">$600</div>
           </div>
           <div class="cost-line">
-            <div class="cost-line-label">Your own hours<span class="cost-line-sub" id="cost-sub-time">15 hrs × $300 — filming, briefing, reviewing, chasing</span></div>
-            <div class="cost-line-amt" id="cost-amt-time">$4,500</div>
+            <div class="cost-line-label">Your own hours<span class="cost-line-sub" id="cost-sub-time">25 hrs × $300 — filming, briefing, reviewing, chasing</span></div>
+            <div class="cost-line-amt" id="cost-amt-time">$7,500</div>
           </div>
         </div>
 
         <div class="cost-total">
-          <div class="cost-total-label">Total per month<span id="cost-pervideo">$765 per video</span></div>
+          <div class="cost-total-label">Total per month<span id="cost-pervideo">$1,065 per video</span></div>
           <div class="cost-total-amt" id="cost-total"><span></span></div>
         </div>
 
@@ -1219,7 +1219,7 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
           <div class="cost-save-compare">
             <div class="cost-save-row diy">
               <span>Doing it yourself</span>
-              <strong id="cost-save-diy">$7,650<em>/mo</em></strong>
+              <strong id="cost-save-diy">$10,650<em>/mo</em></strong>
             </div>
             <div class="cost-save-row mz">
               <span><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>With MZ Media · <em>done for you</em></span>
@@ -1228,8 +1228,8 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
           </div>
           <div class="cost-save-headline">
             <div class="cost-save-eyebrow">Your estimated savings</div>
-            <div class="cost-save-big"><span id="cost-save-amt">$5,150</span><span class="per">/mo</span></div>
-            <div class="cost-save-year" id="cost-save-year">That's <strong>$61,800</strong> a year — plus <strong>180 hours</strong> back in your calendar.</div>
+            <div class="cost-save-big"><span id="cost-save-amt">$8,150</span><span class="per">/mo</span></div>
+            <div class="cost-save-year" id="cost-save-year">That's <strong>$97,800</strong> a year — plus <strong>300 hours</strong> back in your calendar.</div>
             <a href="#book" class="cost-save-cta">See your price <span class="arrow">→</span></a>
             <div class="cost-save-fine">Scripting, editing, thumbnails, strategy and your time back — handed off for a fraction of what doing it alone costs. Month-to-month, cancel anytime.</div>
           </div>
@@ -1246,7 +1246,7 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
   if(!videos || !rate) return;
 
   // per-video / per-month rates for the DIY route
-  var SCRIPT_PER = 100, EDIT_PER = 125, THUMB_PER = 30, MANAGER = 600, HRS_PER_VIDEO = 1.5;
+  var SCRIPT_PER = 100, EDIT_PER = 125, THUMB_PER = 30, MANAGER = 600, HRS_PER_VIDEO = 2.5;
   var MZ_FROM = 2500;          // MZ Media "from" anchor used for the savings math
   var revealed = false;        // has the savings number counted up yet?
 
