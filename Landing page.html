@@ -1182,7 +1182,7 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
 
         <div class="cost-row total"><span class="cost-row-label">Total</span><span class="cost-row-amt" id="cost-total">$12,400 <em>/ mo</em></span></div>
 
-        <div class="cost-mzline">MZ Media, fully done for you = <strong>from $2,500 / mo</strong></div>
+        <div class="cost-mzline">MZ Media, fully done for you = <strong><span id="cost-mz">$2,500</span> / mo</strong></div>
 
         <div class="cost-savings">
           <div class="cost-savings-head">You save <span id="cost-save-amt">$118,800</span> / year</div>
@@ -1204,11 +1204,12 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
 
   // per-video / per-month rates for the DIY route
   var SCRIPT_PER = 100, EDIT_PER = 125, THUMB_PER = 30, MANAGER = 600, TOOLS = 250, HRS_PER_VIDEO = 3;
-  var MZ_FROM = 2500;          // MZ Media "from" anchor used for the savings math
-  var revealed = false;        // has the savings number counted up yet?
+  var MZ_MIN = 2500, MZ_PER = 250;  // MZ price scales with volume but floors at $2,500/mo
+  var revealed = false;             // has the savings number counted up yet?
 
   function money(n){ return '$' + Math.round(n).toLocaleString('en-US'); }
   function diyTotal(v, r){ return v*SCRIPT_PER + v*EDIT_PER + v*THUMB_PER + MANAGER + TOOLS + (v*HRS_PER_VIDEO)*r; }
+  function mzPrice(v){ return Math.max(MZ_MIN, v*MZ_PER); }
   function fillTrack(el){
     var pct = (el.value - el.min) / (el.max - el.min) * 100;
     el.style.setProperty('--fill', pct + '%');
@@ -1239,10 +1240,12 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
 
     document.getElementById('cost-total').innerHTML = money(total) + ' <em>/ mo</em>';
 
-    // ── savings vs MZ Media ──
-    var save   = Math.max(0, total - MZ_FROM);
+    // ── savings vs MZ Media (price scales with volume) ──
+    var mz     = mzPrice(v);
+    var save   = Math.max(0, total - mz);
     var saveYr = save * 12;
     var hrsYr  = Math.round(hrs * 12);
+    document.getElementById('cost-mz').textContent       = money(mz);
     document.getElementById('cost-save-mo').textContent  = money(save);
     document.getElementById('cost-save-hrs').textContent = hrsYr.toLocaleString('en-US') + ' hours';
     if (revealed) document.getElementById('cost-save-amt').textContent = money(saveYr);
@@ -1273,7 +1276,7 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
         if (en.isIntersecting && !revealed){
           revealed = true;
           var v = parseInt(videos.value, 10), r = parseInt(rate.value, 10);
-          countUp(amtEl, Math.max(0, diyTotal(v, r) - MZ_FROM) * 12);
+          countUp(amtEl, Math.max(0, diyTotal(v, r) - mzPrice(v)) * 12);
           io.disconnect();
         }
       });
