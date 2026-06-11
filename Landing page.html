@@ -1071,107 +1071,67 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
 
 <!-- ══════════════════ COST CALCULATOR ══════════════════ -->
 <style>
-  .cost-wrap{display:grid;grid-template-columns:0.82fr 1.18fr;gap:30px;align-items:start;margin-top:60px;text-align:left}
-  @media(max-width:960px){.cost-wrap{grid-template-columns:1fr;gap:22px}}
+  /* ClickUp-style gradient frame */
+  .cost-frame{position:relative;display:grid;grid-template-columns:1fr 1.05fr;gap:16px;margin-top:56px;padding:16px;border-radius:28px;background:linear-gradient(105deg,#4F46E5 0%,#6D28D9 52%,#C026D3 100%);box-shadow:0 50px 120px -36px rgba(109,40,217,.55),0 18px 50px -22px rgba(192,38,211,.32)}
+  @media(max-width:880px){.cost-frame{grid-template-columns:1fr;gap:14px;padding:12px;border-radius:22px}}
+  .cost-panel{background:#fff;border-radius:18px;padding:32px 30px;text-align:left}
+  @media(max-width:520px){.cost-panel{padding:24px 20px;border-radius:14px}}
+  .cost-badge{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:#6D28D9;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(15,17,23,.32);z-index:3;border:4px solid #fff}
+  .cost-badge svg{width:18px;height:18px}
+  @media(max-width:880px){.cost-badge{transform:translate(-50%,-50%) rotate(90deg)}}
 
-  .cost-controls{background:var(--white);border:1px solid var(--border);border-radius:22px;padding:30px 28px;position:sticky;top:104px;box-shadow:0 24px 56px -30px rgba(15,17,23,.2)}
-  @media(max-width:960px){.cost-controls{position:static}}
-  .cost-controls-title{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);margin-bottom:26px;display:flex;align-items:center;gap:9px}
-  .cost-controls-title svg{width:15px;height:15px;color:var(--a)}
-  .cost-control{margin-bottom:28px}
+  /* left: inputs */
+  .cost-panel-title{font-size:1.05rem;font-weight:800;letter-spacing:-.02em;color:var(--ink);margin-bottom:26px}
+  .cost-control{margin-bottom:30px}
   .cost-control:last-of-type{margin-bottom:0}
   .cost-control-top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:15px}
   .cost-control-label{font-size:.92rem;font-weight:600;color:var(--ink);letter-spacing:-.01em}
-  .cost-control-val{font-family:'Inter',sans-serif;font-weight:800;font-size:1.18rem;letter-spacing:-.02em;color:var(--a);white-space:nowrap;background:var(--af);border:1px solid var(--as);padding:5px 15px;border-radius:100px;line-height:1.2}
+  .cost-control-val{font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;letter-spacing:-.02em;color:var(--a);white-space:nowrap;background:var(--af);border:1px solid var(--as);padding:5px 15px;border-radius:100px;line-height:1.2}
   .cost-control-val span{font-size:.72rem;font-weight:600;color:var(--a);opacity:.65}
-  .cost-range{-webkit-appearance:none;appearance:none;width:100%;height:10px;border-radius:100px;background:linear-gradient(90deg,var(--a) 0%,#7C3AED var(--fill,40%),#E2DDD0 var(--fill,40%),#E2DDD0 100%);outline:none;cursor:pointer}
-  .cost-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:28px;height:28px;border-radius:50%;background:#fff;border:3px solid var(--a);box-shadow:0 6px 18px rgba(79,70,229,.4),0 1px 3px rgba(15,17,23,.2);cursor:grab;transition:transform .15s}
+  .cost-range{-webkit-appearance:none;appearance:none;width:100%;height:10px;border-radius:100px;background:linear-gradient(90deg,#4F46E5 0%,#7C3AED var(--fill,40%),#E6E2F5 var(--fill,40%),#E6E2F5 100%);outline:none;cursor:pointer}
+  .cost-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:26px;height:26px;border-radius:50%;background:#fff;border:3px solid var(--a);box-shadow:0 5px 16px rgba(79,70,229,.45),0 1px 3px rgba(15,17,23,.2);cursor:grab;transition:transform .15s}
   .cost-range::-webkit-slider-thumb:hover{transform:scale(1.14)}
-  .cost-range::-webkit-slider-thumb:active{cursor:grabbing}
-  .cost-range::-moz-range-thumb{width:28px;height:28px;border-radius:50%;background:#fff;border:3px solid var(--a);box-shadow:0 6px 18px rgba(79,70,229,.4);cursor:grab}
-  .cost-range-scale{display:flex;justify-content:space-between;margin-top:11px;font-size:.72rem;color:var(--soft);letter-spacing:.01em;font-weight:500}
-  .cost-controls-note{margin-top:26px;padding-top:20px;border-top:1px dashed var(--border);font-size:.8rem;color:var(--mid);line-height:1.55;letter-spacing:-.005em}
-  .cost-controls-note strong{color:var(--ink);font-weight:600}
+  .cost-range::-moz-range-thumb{width:26px;height:26px;border-radius:50%;background:#fff;border:3px solid var(--a);box-shadow:0 5px 16px rgba(79,70,229,.45);cursor:grab}
+  .cost-range-scale{display:flex;justify-content:space-between;margin-top:11px;font-size:.72rem;color:var(--soft);font-weight:500}
+  .cost-note{margin-top:28px;padding-top:20px;border-top:1px dashed var(--border);font-size:.78rem;color:var(--mid);line-height:1.55;letter-spacing:-.005em}
+  .cost-note strong{color:var(--ink);font-weight:600}
 
-  /* receipt */
-  .cost-receipt{background:var(--white);border:1px solid var(--border);border-radius:22px;overflow:hidden;box-shadow:0 54px 110px -34px rgba(15,17,23,.3),0 20px 46px -20px rgba(15,17,23,.14)}
-  .cost-receipt-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:22px 28px;border-bottom:1px solid var(--border);background:linear-gradient(180deg,var(--card),rgba(229,225,215,.35))}
-  .cost-receipt-head-l{display:flex;flex-direction:column;gap:4px}
-  .cost-receipt-title{font-family:'Inter',sans-serif;font-weight:800;font-size:1.05rem;letter-spacing:-.02em;color:var(--ink)}
-  .cost-receipt-meta{font-family:'SFMono-Regular',ui-monospace,'Menlo','Consolas',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--soft);text-transform:uppercase}
-  .cost-receipt-badge{display:inline-flex;align-items:center;gap:7px;font-size:.68rem;font-weight:700;color:var(--red);background:var(--red-soft);padding:6px 12px;border-radius:100px;letter-spacing:.08em;text-transform:uppercase;flex-shrink:0}
-  .cost-receipt-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 0 3px rgba(220,38,38,.16)}
-  .cost-lines{padding:6px 28px}
-  .cost-line{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px dashed var(--border)}
-  .cost-line:last-child{border-bottom:none}
-  .cost-line-ico{width:38px;height:38px;border-radius:11px;background:var(--af);color:var(--a);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
-  .cost-line-ico svg{width:18px;height:18px}
-  .cost-line-body{flex:1;min-width:0}
-  .cost-line-label{font-size:.95rem;color:var(--ink);font-weight:600;letter-spacing:-.01em;line-height:1.3}
-  .cost-line-sub{display:block;font-size:.74rem;color:var(--soft);margin-top:2px;font-family:'SFMono-Regular',ui-monospace,'Menlo','Consolas',monospace;letter-spacing:0}
-  .cost-line-amt{font-family:'SFMono-Regular',ui-monospace,'Menlo','Consolas',monospace;font-size:1.02rem;font-weight:600;color:var(--ink);white-space:nowrap;font-variant-numeric:tabular-nums}
-  .cost-total{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding:22px 28px;border-top:2px solid var(--ink);background:var(--card)}
-  .cost-total-label{font-family:'SFMono-Regular',ui-monospace,'Menlo','Consolas',monospace;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
-  .cost-total-label span{display:block;font-size:.74rem;font-weight:500;letter-spacing:-.005em;text-transform:none;color:var(--mid);margin-top:6px;font-family:'Inter',sans-serif}
-  .cost-total-amt{font-family:'Inter',sans-serif;font-weight:800;font-size:clamp(2.1rem,4.6vw,3rem);letter-spacing:-.04em;line-height:.92;color:var(--ink);white-space:nowrap;text-align:right}
-  .cost-total-amt span{display:block;text-align:right;font-size:.78rem;font-weight:500;letter-spacing:-.01em;color:var(--mid);margin-top:7px}
-  .cost-gotcha{display:flex;align-items:flex-start;gap:12px;padding:16px 28px;background:var(--red-soft);color:#991B1B;font-size:.88rem;line-height:1.5;letter-spacing:-.005em}
-  .cost-gotcha svg{width:18px;height:18px;flex-shrink:0;margin-top:1px;color:var(--red)}
-  .cost-gotcha strong{font-weight:700}
-
-  /* MZ savings reveal */
-  .cost-save{position:relative;background:linear-gradient(140deg,#4F46E5 0%,#6D28D9 55%,#7C3AED 100%);color:#fff;overflow:hidden}
-  .cost-save::before{content:"";position:absolute;top:-45%;right:-12%;width:440px;height:440px;background:radial-gradient(circle,rgba(255,255,255,.16) 0%,transparent 65%);pointer-events:none}
-  .cost-save-compare{position:relative;display:flex;align-items:stretch}
-  .cost-save-col{flex:1;padding:20px 24px;display:flex;flex-direction:column;gap:7px;min-width:0}
-  .cost-save-col.mz{background:rgba(255,255,255,.08)}
-  .cost-save-col-label{font-size:.72rem;font-weight:600;color:rgba(255,255,255,.74);letter-spacing:.01em;display:inline-flex;align-items:center;gap:6px}
-  .cost-save-col-label em{font-style:normal;color:rgba(255,255,255,.55)}
-  .cost-save-col .chk{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:#fff;flex-shrink:0}
-  .cost-save-col .chk svg{width:9px;height:9px;color:var(--a)}
-  .cost-save-col-val{font-family:'Inter',sans-serif;font-size:1.42rem;font-weight:800;letter-spacing:-.025em;color:#fff}
-  .cost-save-col-val em{font-size:.7rem;font-weight:600;font-style:normal;color:rgba(255,255,255,.7);margin-left:2px}
-  .cost-save-col.diy .cost-save-col-val{color:rgba(255,255,255,.78);text-decoration:line-through;text-decoration-color:rgba(255,255,255,.5);text-decoration-thickness:2px}
-  .cost-save-vs{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:40px;height:40px;border-radius:50%;background:#fff;color:var(--a);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.72rem;text-transform:uppercase;box-shadow:0 8px 20px rgba(15,17,23,.32);z-index:2;border:3px solid #6D28D9}
-  .cost-save-headline{position:relative;padding:30px 30px 34px;text-align:center;border-top:1px solid rgba(255,255,255,.15)}
-  .cost-save-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.82);margin-bottom:10px}
-  .cost-save-big{display:flex;align-items:baseline;justify-content:center;gap:8px;line-height:.9}
-  .cost-save-big #cost-save-amt{font-family:'Inter',sans-serif;font-weight:800;font-size:clamp(3rem,8.5vw,4.8rem);letter-spacing:-.045em;font-variant-numeric:tabular-nums;text-shadow:0 6px 30px rgba(0,0,0,.2)}
-  .cost-save-big .per{font-size:1.2rem;font-weight:700;color:rgba(255,255,255,.82)}
-  .cost-save-chips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}
-  .cost-save-chip{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:100px;padding:9px 16px;font-size:.85rem;color:rgba(255,255,255,.9);letter-spacing:-.005em}
-  .cost-save-chip strong{font-weight:800;color:#fff}
-  .cost-save-chip svg{width:14px;height:14px;color:rgba(255,255,255,.85)}
-  .cost-save-cta{margin-top:24px;display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--a);font-weight:700;font-size:1rem;padding:17px 34px;border-radius:100px;box-shadow:0 16px 40px rgba(15,17,23,.34);transition:transform .2s cubic-bezier(.34,1.56,.64,1),box-shadow .2s}
-  .cost-save-cta:hover{transform:translateY(-3px);box-shadow:0 22px 52px rgba(15,17,23,.42)}
-  .cost-save-cta .arrow{transition:transform .25s cubic-bezier(.34,1.56,.64,1)}
-  .cost-save-cta:hover .arrow{transform:translateX(4px)}
-  .cost-save-fine{font-size:.76rem;color:rgba(255,255,255,.6);margin:16px auto 0;max-width:430px;line-height:1.5;letter-spacing:-.005em}
-  @media(max-width:520px){
-    .cost-controls{padding:24px 20px}
-    .cost-lines{padding:4px 20px}
-    .cost-receipt-head,.cost-total,.cost-gotcha{padding-left:20px;padding-right:20px}
-    .cost-line-ico{width:34px;height:34px;border-radius:10px}
-    .cost-line-ico svg{width:16px;height:16px}
-    .cost-save-col{padding:16px 16px}
-    .cost-save-col-val{font-size:1.2rem}
-    .cost-save-vs{width:34px;height:34px;font-size:.66rem}
-    .cost-save-headline{padding:24px 20px 28px}
-  }
+  /* right: invoice + savings */
+  .cost-right-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:14px}
+  .cost-right-title{font-size:1.05rem;font-weight:800;letter-spacing:-.02em;color:var(--ink)}
+  .cost-right-sub{font-size:.82rem;color:var(--soft);font-weight:500;white-space:nowrap}
+  .cost-row{display:flex;align-items:baseline;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px dashed var(--border)}
+  .cost-row-label{font-size:.92rem;color:var(--ink);font-weight:500;letter-spacing:-.005em;min-width:0}
+  .cost-row-label em{font-style:normal;display:block;font-size:.7rem;color:var(--soft);margin-top:2px;font-family:'SFMono-Regular',ui-monospace,'Menlo','Consolas',monospace}
+  .cost-row-amt{font-size:.92rem;font-weight:600;color:var(--mid);white-space:nowrap;font-variant-numeric:tabular-nums}
+  .cost-row.total{padding-top:16px}
+  .cost-row.total .cost-row-label{font-weight:800;font-size:1.02rem;color:var(--ink)}
+  .cost-row.total .cost-row-amt{font-weight:800;font-size:1.1rem;color:var(--ink)}
+  .cost-row.total .cost-row-amt em{font-style:normal;font-size:.72rem;color:var(--soft);font-weight:600;margin-left:1px}
+  .cost-mzline{font-size:.88rem;color:var(--mid);padding:16px 0 0;letter-spacing:-.005em;line-height:1.5}
+  .cost-mzline strong{color:var(--ink);font-weight:700}
+  .cost-savings{margin-top:18px}
+  .cost-savings-head{font-family:'Inter',sans-serif;font-weight:800;font-size:clamp(1.55rem,3.4vw,2.1rem);letter-spacing:-.03em;color:var(--a);line-height:1.08}
+  .cost-savings-head #cost-save-amt{font-variant-numeric:tabular-nums}
+  .cost-savings-desc{font-size:.82rem;color:var(--mid);line-height:1.55;margin-top:8px;letter-spacing:-.005em}
+  .cost-savings-desc strong{color:var(--ink);font-weight:700}
+  .cost-cta{margin-top:22px;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:linear-gradient(105deg,#4F46E5,#7C3AED 70%,#9333EA);color:#fff;font-weight:700;font-size:1rem;padding:16px 28px;border-radius:13px;box-shadow:0 16px 34px -10px rgba(79,70,229,.55);transition:transform .2s cubic-bezier(.34,1.56,.64,1),box-shadow .2s,filter .2s;letter-spacing:-.005em}
+  .cost-cta:hover{transform:translateY(-2px);box-shadow:0 22px 44px -12px rgba(79,70,229,.65);filter:brightness(1.06)}
+  .cost-cta .arrow{transition:transform .25s cubic-bezier(.34,1.56,.64,1)}
+  .cost-cta:hover .arrow{transform:translateX(4px)}
+  .cost-cta-2{display:block;text-align:center;margin-top:13px;font-size:.84rem;color:var(--a);font-weight:600}
+  .cost-cta-2:hover{color:var(--ad);text-decoration:underline;text-underline-offset:2px}
 </style>
 <section id="cost" class="sec">
   <div class="sec-inner header-center">
     <div class="eyebrow"><em>The real math</em></div>
-    <h2>What it actually costs to run a content engine <em class="purple">on your own.</em></h2>
-    <p class="lead" style="margin-top:20px">Drag the sliders. See what doing it yourself really costs every month — and how much you save handing the whole thing to MZ.</p>
+    <h2>Save the time. Save the money. <em class="purple">Skip the busywork.</em></h2>
+    <p class="lead" style="margin-top:20px">Costs are based on what founders actually pay to run a channel themselves — creative work priced at just a quarter of typical agency rates.</p>
 
-    <div class="cost-wrap">
-      <!-- CONTROLS -->
-      <div class="cost-controls">
-        <div class="cost-controls-title">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
-          Adjust to your channel
-        </div>
+    <div class="cost-frame">
+      <!-- LEFT: inputs -->
+      <div class="cost-panel">
+        <div class="cost-panel-title">Build your channel</div>
         <div class="cost-control">
           <div class="cost-control-top">
             <div class="cost-control-label">Videos you want per month</div>
@@ -1180,7 +1140,6 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
           <input type="range" class="cost-range" id="cost-videos" min="4" max="30" step="1" value="10">
           <div class="cost-range-scale"><span>4</span><span>30</span></div>
         </div>
-
         <div class="cost-control">
           <div class="cost-control-top">
             <div class="cost-control-label">What your time is worth</div>
@@ -1189,112 +1148,37 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
           <input type="range" class="cost-range" id="cost-rate" min="100" max="1000" step="25" value="300">
           <div class="cost-range-scale"><span>$100</span><span>$1,000</span></div>
         </div>
-
-        <div class="cost-controls-note">
-          Creative line items are set to <strong>a quarter of typical agency rates</strong> — the floor you'd pay stitching it together with freelancers. Your own hours count too, because that's the cost nobody puts on the invoice.
-        </div>
+        <div class="cost-note">Creative line items are set to <strong>a quarter of typical agency rates</strong> — the floor you'd pay piecing it together with freelancers. Your own hours count too.</div>
       </div>
 
-      <!-- RECEIPT -->
-      <div class="cost-receipt">
-        <div class="cost-receipt-head">
-          <div class="cost-receipt-head-l">
-            <div class="cost-receipt-title">Doing it yourself</div>
-            <div class="cost-receipt-meta">Estimated monthly invoice</div>
-          </div>
-          <div class="cost-receipt-badge"><span class="dot"></span>The DIY way</div>
+      <!-- BADGE -->
+      <div class="cost-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 17 12 12 7 7"/><polyline points="13 17 18 12 13 7"/></svg></div>
+
+      <!-- RIGHT: invoice + savings -->
+      <div class="cost-panel">
+        <div class="cost-right-head">
+          <div class="cost-right-title">Running it yourself</div>
+          <div class="cost-right-sub" id="cost-forline">for 10 videos / month</div>
         </div>
 
-        <div class="cost-lines">
-          <div class="cost-line">
-            <span class="cost-line-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg></span>
-            <div class="cost-line-body">
-              <div class="cost-line-label">Scriptwriting &amp; ideation</div>
-              <span class="cost-line-sub" id="cost-sub-script">10 videos × $100</span>
-            </div>
-            <div class="cost-line-amt" id="cost-amt-script">$1,000</div>
-          </div>
-          <div class="cost-line">
-            <span class="cost-line-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg></span>
-            <div class="cost-line-body">
-              <div class="cost-line-label">Professional editing</div>
-              <span class="cost-line-sub" id="cost-sub-edit">10 videos × $125</span>
-            </div>
-            <div class="cost-line-amt" id="cost-amt-edit">$1,250</div>
-          </div>
-          <div class="cost-line">
-            <span class="cost-line-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></span>
-            <div class="cost-line-body">
-              <div class="cost-line-label">Thumbnails &amp; packaging</div>
-              <span class="cost-line-sub" id="cost-sub-thumb">10 videos × $30</span>
-            </div>
-            <div class="cost-line-amt" id="cost-amt-thumb">$300</div>
-          </div>
-          <div class="cost-line">
-            <span class="cost-line-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-            <div class="cost-line-body">
-              <div class="cost-line-label">Content strategist / manager</div>
-              <span class="cost-line-sub">retainer, every month</span>
-            </div>
-            <div class="cost-line-amt" id="cost-amt-mgr">$600</div>
-          </div>
-          <div class="cost-line">
-            <span class="cost-line-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span>
-            <div class="cost-line-body">
-              <div class="cost-line-label">Tools, apps &amp; subscriptions</div>
-              <span class="cost-line-sub">editing, thumbnails, scheduling, AI</span>
-            </div>
-            <div class="cost-line-amt" id="cost-amt-tools">$250</div>
-          </div>
-          <div class="cost-line">
-            <span class="cost-line-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
-            <div class="cost-line-body">
-              <div class="cost-line-label">Your own hours</div>
-              <span class="cost-line-sub" id="cost-sub-time">30 hrs × $300 — filming, briefing, reviewing, chasing</span>
-            </div>
-            <div class="cost-line-amt" id="cost-amt-time">$9,000</div>
-          </div>
+        <div class="cost-row"><span class="cost-row-label">Scriptwriting &amp; ideation<em id="cost-sub-script">10 × $100</em></span><span class="cost-row-amt" id="cost-amt-script">$1,000</span></div>
+        <div class="cost-row"><span class="cost-row-label">Professional editing<em id="cost-sub-edit">10 × $125</em></span><span class="cost-row-amt" id="cost-amt-edit">$1,250</span></div>
+        <div class="cost-row"><span class="cost-row-label">Thumbnails &amp; packaging<em id="cost-sub-thumb">10 × $30</em></span><span class="cost-row-amt" id="cost-amt-thumb">$300</span></div>
+        <div class="cost-row"><span class="cost-row-label">Content strategist / manager<em>monthly retainer</em></span><span class="cost-row-amt" id="cost-amt-mgr">$600</span></div>
+        <div class="cost-row"><span class="cost-row-label">Tools, apps &amp; subscriptions<em>editing, thumbnails, AI</em></span><span class="cost-row-amt" id="cost-amt-tools">$250</span></div>
+        <div class="cost-row"><span class="cost-row-label">Your own hours<em id="cost-sub-time">30 hrs × $300</em></span><span class="cost-row-amt" id="cost-amt-time">$9,000</span></div>
+
+        <div class="cost-row total"><span class="cost-row-label">Total</span><span class="cost-row-amt" id="cost-total">$12,400 <em>/ mo</em></span></div>
+
+        <div class="cost-mzline">MZ Media, fully done for you = <strong>from $2,500 / mo</strong></div>
+
+        <div class="cost-savings">
+          <div class="cost-savings-head">You save <span id="cost-save-amt">$118,800</span> / year</div>
+          <p class="cost-savings-desc">That's <strong id="cost-save-mo">$9,900</strong> saved every month versus piecing it together yourself — plus <strong id="cost-save-hrs">360 hours</strong> a year back in your calendar.</p>
         </div>
 
-        <div class="cost-total">
-          <div class="cost-total-label">Total per month<span id="cost-pervideo">$1,240 per video</span></div>
-          <div class="cost-total-amt" id="cost-total">$12,400<span>per month</span></div>
-        </div>
-
-        <div class="cost-gotcha">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          <div>And after all that, <strong>you're still the bottleneck</strong> — editing briefs at midnight, chasing freelancers who ghost, and still not booking qualified calls.</div>
-        </div>
-
-        <div class="cost-save">
-          <div class="cost-save-compare">
-            <div class="cost-save-col diy">
-              <div class="cost-save-col-label">Doing it yourself</div>
-              <div class="cost-save-col-val" id="cost-save-diy">$12,400<em>/mo</em></div>
-            </div>
-            <div class="cost-save-vs">vs</div>
-            <div class="cost-save-col mz">
-              <div class="cost-save-col-label"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>With MZ Media <em>· done for you</em></div>
-              <div class="cost-save-col-val">from $2,500<em>/mo</em></div>
-            </div>
-          </div>
-          <div class="cost-save-headline">
-            <div class="cost-save-eyebrow">Your estimated savings</div>
-            <div class="cost-save-big"><span id="cost-save-amt">$9,900</span><span class="per">/mo</span></div>
-            <div class="cost-save-chips">
-              <div class="cost-save-chip">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-                <span><strong id="cost-save-year">$118,800</strong> saved a year</span>
-              </div>
-              <div class="cost-save-chip">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                <span><strong id="cost-save-hrs">360 hours</strong> back to you</span>
-              </div>
-            </div>
-            <a href="#book" class="cost-save-cta">See your price <span class="arrow">→</span></a>
-            <div class="cost-save-fine">Scripting, editing, thumbnails, strategy and your time back — handed off for a fraction of what doing it alone costs. Month-to-month, cancel anytime.</div>
-          </div>
-        </div>
+        <a href="#book" class="cost-cta">See your price <span class="arrow">→</span></a>
+        <a href="#book" class="cost-cta-2">or book a call to get your exact number</a>
       </div>
     </div>
   </div>
@@ -1322,39 +1206,34 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
     var v = parseInt(videos.value, 10);
     var r = parseInt(rate.value, 10);
     var hrs = +(v * HRS_PER_VIDEO).toFixed(1);
-
-    var script = v * SCRIPT_PER;
-    var edit   = v * EDIT_PER;
-    var thumb  = v * THUMB_PER;
-    var time   = hrs * r;
-    var total  = script + edit + thumb + MANAGER + TOOLS + time;
+    var hrsTxt = (hrs % 1 === 0 ? hrs : hrs.toFixed(1));
+    var total = diyTotal(v, r);
 
     document.getElementById('cost-videos-val').textContent = v;
     document.getElementById('cost-rate-val').innerHTML = '$' + r.toLocaleString('en-US') + '<span>/hr</span>';
+    document.getElementById('cost-forline').textContent = 'for ' + v + ' videos / month';
 
-    document.getElementById('cost-sub-script').textContent = v + ' videos × $' + SCRIPT_PER;
-    document.getElementById('cost-sub-edit').textContent   = v + ' videos × $' + EDIT_PER;
-    document.getElementById('cost-sub-thumb').textContent  = v + ' videos × $' + THUMB_PER;
-    document.getElementById('cost-sub-time').textContent   = (hrs % 1 === 0 ? hrs : hrs.toFixed(1)) + ' hrs × $' + r.toLocaleString('en-US') + ' — filming, briefing, reviewing, chasing';
+    document.getElementById('cost-sub-script').textContent = v + ' × $' + SCRIPT_PER;
+    document.getElementById('cost-sub-edit').textContent   = v + ' × $' + EDIT_PER;
+    document.getElementById('cost-sub-thumb').textContent  = v + ' × $' + THUMB_PER;
+    document.getElementById('cost-sub-time').textContent   = hrsTxt + ' hrs × $' + r.toLocaleString('en-US');
 
-    document.getElementById('cost-amt-script').textContent = money(script);
-    document.getElementById('cost-amt-edit').textContent   = money(edit);
-    document.getElementById('cost-amt-thumb').textContent  = money(thumb);
+    document.getElementById('cost-amt-script').textContent = money(v * SCRIPT_PER);
+    document.getElementById('cost-amt-edit').textContent   = money(v * EDIT_PER);
+    document.getElementById('cost-amt-thumb').textContent  = money(v * THUMB_PER);
     document.getElementById('cost-amt-mgr').textContent    = money(MANAGER);
     document.getElementById('cost-amt-tools').textContent  = money(TOOLS);
-    document.getElementById('cost-amt-time').textContent   = money(time);
+    document.getElementById('cost-amt-time').textContent   = money(hrs * r);
 
-    document.getElementById('cost-total').innerHTML = money(total) + '<span>per month</span>';
-    document.getElementById('cost-pervideo').textContent = money(total / v) + ' per video';
+    document.getElementById('cost-total').innerHTML = money(total) + ' <em>/ mo</em>';
 
     // ── savings vs MZ Media ──
     var save   = Math.max(0, total - MZ_FROM);
     var saveYr = save * 12;
     var hrsYr  = Math.round(hrs * 12);
-    document.getElementById('cost-save-diy').innerHTML = money(total) + '<em>/mo</em>';
-    document.getElementById('cost-save-year').textContent = money(saveYr);
-    document.getElementById('cost-save-hrs').textContent  = hrsYr.toLocaleString('en-US') + ' hours';
-    if (revealed) document.getElementById('cost-save-amt').textContent = money(save);
+    document.getElementById('cost-save-mo').textContent  = money(save);
+    document.getElementById('cost-save-hrs').textContent = hrsYr.toLocaleString('en-US') + ' hours';
+    if (revealed) document.getElementById('cost-save-amt').textContent = money(saveYr);
 
     fillTrack(videos);
     fillTrack(rate);
@@ -1382,7 +1261,7 @@ src="https://www.facebook.com/tr?id=1286984503162211&ev=PageView&noscript=1"
         if (en.isIntersecting && !revealed){
           revealed = true;
           var v = parseInt(videos.value, 10), r = parseInt(rate.value, 10);
-          countUp(amtEl, Math.max(0, diyTotal(v, r) - MZ_FROM));
+          countUp(amtEl, Math.max(0, diyTotal(v, r) - MZ_FROM) * 12);
           io.disconnect();
         }
       });
